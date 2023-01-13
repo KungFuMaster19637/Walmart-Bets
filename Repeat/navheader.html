@@ -1,28 +1,48 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <nav>
   <img src="/ProjectWB/Images/Dice.png" class="logo">
-  <a href="/ProjectWB/index.html" id="title">Walmart Bets</a>
-  <ul>
-    <li><a href="/ProjectWB/howtoplay.html">How To Play</a></li>
-    <li><a href="/ProjectWB/rules.html">Rules</a></li>
-    <li><a href="/ProjectWB/shop.html">Shop</a></li>
-    <li><a href="/ProjectWB/leaderboard.html">Leaderboard</a></li>
-    <li><a href="/ProjectWB/balancenotes.html">Balance Notes</a></li>
-  </ul>
-  <button type="button"></button>
+  <div class="navBar" id="myNavBar">
+    <a href="/ProjectWB/index.html" id="title">Walmart Bets</a>
+    <a href="/ProjectWB/howtoplay.html">How To Play</a>
+    <a href="/ProjectWB/rules.html">Rules</a>
+    <a href="/ProjectWB/shop.html">Shop</a>
+    <a href="/ProjectWB/leaderboard.html">Leaderboard</a>
+    <a href="/ProjectWB/balancenotes.html">Balance Notes</a>
+    <a href="javascript:void(0);" class="icon" onclick="collapseNav()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <!-- <button type="button"></button> Maybe later -->
+  </div>
 </nav>
+
+<!-- Sticky Nav
+<script>
+  window.onscroll = function () { stickyNav() };
+  let navbar = document.getElementById("myNavBar");
+  let sticky = navbar.offsetTop;
+  function stickyNav() {
+    console.log(window.scrollY);
+    if (window.scrollY >= sticky) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+</script> -->
+
+<div class="scroller">
+  <h2> Budget 60 |
+    <span class="buff"> Xiangling 10 &#x21e9; 8 </span> | <span class="nerf"> Ganyu 8 &#x21e7; 10 </span> |
+    <span class="buff"> Zhongli 10 &#x21e9; 8 </span> | <span class="buff"> Venti 10 &#x21e9; 8 </span> |
+    <span class="nerf"> Keqing 6 &#x21e7; 8 </span> | <span class="nerf"> Yae 6 &#x21e7; 8 </span> |
+    <span class="nerf"> Cyno 4 &#x21e7; 6 </span> | <span class="nerf"> Sara 4 &#x21e7; 6 </span>|
+    <span class="nerf"> Anemo Traveler 0 &#x21e7; 2 </span>
+  </h2>
+</div>
 <!-- 
   <script> 
     let up = "&#x21e7;" ;
     let down = "&#x21e9;";
   </script>
 -->
-<div class="scroller">
-  <h2> Budget 60 | 
-    <span class="buff"> Xiangling 10 &#x21e9; 8 </span> | <span class="nerf"> Ganyu 8 &#x21e7; 10 </span> | 
-    <span class="buff"> Zhongli 10 &#x21e9; 8 </span> | <span class="buff"> Venti 10 &#x21e9; 8 </span> | 
-    <span class="nerf"> Keqing 6 &#x21e7; 8 </span> | <span class="nerf"> Yae 6 &#x21e7; 8 </span> | 
-    <span class="nerf"> Cyno 4 &#x21e7; 6 </span> | <span class="nerf"> Sara 4 &#x21e7; 6 </span>| 
-    <span class="nerf"> Anemo Traveler 0 &#x21e7; 2 </span> 
-  </h2>
-</div>
 <!-- Use Pictures later? -->
