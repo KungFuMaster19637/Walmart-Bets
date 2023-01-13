@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <title>Title Here</title>
+    <link rel="stylesheet" href="WalmartBets.css">
+    <link rel="icon" href="" type="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="capsule">
+            <div id="nav-placeholder"></div>
+            <script>
+                $(function () {
+                    $("#nav-placeholder").load("Repeat/navheader.html");
+                });
+            </script>
+            <div class="balancenotescontainer">
+                <div class="balancehistory">
+                    <div class="balancerow1">
+                        <!-- 
+                            <a href="javascript:void(0);" class="icon" onclick="openHistory()">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        -->
+                        <ul id="balancelist">
+                        </ul>
+                    </div>
+                </div>
+                <div id="balancetext">
+                </div>
+            </div>
+    </main>
+    <script>
+        function readTextFile(file) {
+            let rawFile = new XMLHttpRequest();
+            rawFile.open("GET", file, false);
+            rawFile.onreadystatechange = function () {
+                if (rawFile.readyState === 4) {
+                    if (rawFile.status === 200 || rawFile.status == 0) {
+                        
+                        // Removes all text of the balancetext div
+                        const resetText = document.getElementById("balancetext");
+                        while(resetText.lastElementChild){
+                            resetText.removeChild(resetText.lastElementChild);
+                        }
+                        
+                        // Writes the new text of balancetext div
+                        let allText = rawFile.responseText;
+                        let lines = allText.split('\n');
+                        for (let line = 0; line < lines.length; line++) {
+                            let paragraph;
+                            if (line === 0 || line === 1) {
+                                paragraph = document.createElement("h1");
+                            }
+                            else {
+                                paragraph = document.createElement("p");
+                            }
+
+                            paragraph.textContent += `${lines[line]} \r\n`;
+                            document.getElementById("balancetext").appendChild(paragraph);
+                        }
+                    }
+                }
+            }
+            rawFile.send(null);
+        }
+        readTextFile("BalanceNotes/Cycle6.txt"); 
+    </script>
+
+    <script>
+        function loadBalanceHistory(cycle){
+            for (let count = 2; count <= cycle; count++)
+            {
+                let listItem;
+                listItem = document.createElement("li");
+                listItem.setAttribute("onclick", `readTextFile('BalanceNotes/Cycle${count}.txt')`);
+                listItem.textContent = `Cycle ${count}`;
+                document.getElementById("balancelist").appendChild(listItem);
+            }
+        }
+        loadBalanceHistory(6);
+    </script>
+
+    <script>
+        function openHistory(){
+            let list = document.getElementById("balancelist");
+            if (list.style.display === "block"){
+                list.style.display = "none";
+            }
+            else{
+                list.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

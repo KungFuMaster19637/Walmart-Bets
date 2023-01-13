@@ -1,0 +1,9 @@
+3.3 – 3.4
+Cycle 6
+1. Some 5* constellations are still straight up too strong and need further balancing to make them less likely to be used: Both Raiden C2 and Nahida C2 will be changed to a 20 second penalty (making them 25 second penalties when used). In case you use Hyperbloom Raiden while having C2, it will go back to a 10 second penalty (so 15 in total for a Raiden C2).
+2. Another common trend I’ve noticed is that some units are probably never going to be used as standalone unit because of their cost: Xiangling. To fight that issue, I’ve decided to move Xiangling down 1 tier and give her a special condition, where she will cost an additional 2 points when paired with Bennett. 
+3. Ganyu ⬆️  1 tier: Melt Ganyu has been tearing up the second half by bringing only 3 units. The 4th slot usually doesn’t matter and is there to fill in how much budget the player has left. Bringing her up 1 cost should incentivize players to look for other possibilities. 
+4. Zhongli / Venti ⬇️ 1 tier: I’ve made a mistake by putting Zhongli a tier higher in the previous cycle, as he is often not picked anyway due to people looking to one rotate the Wolflord. Venti on the otherhand is once again struggling from the fact that there is a boss enemy on each side. Putting them both down 1 tier should be make them more balanced. 
+5. Keqing / Yae ⬆️ 1 tier: Since the release of Dendro, Keqing and Yae have been fairly strong and consistent in these challenges. The fact that you can make a team as cheap as 16 cost (Sara – Keqing – Dendro – 0 cost) allows for a pretty strong second side. Putting them both a tier higher should free up the units that have not been used. 
+6. Cyno / Sara ⬆️ 1 tier: This should come as no surprise as they are both having the same advantages as mentioned above, with aggravate being a very strong pick at the moment.
+7. Anemo Traveler ⬆️ 1 tier: VV shouldn't cost 0. 

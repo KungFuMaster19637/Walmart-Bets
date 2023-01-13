@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+  <title>Title Here</title>
+  <link rel="stylesheet" href="WalmartBets.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+  <main>
+    <div class="capsule">
+      <div id="nav-placeholder"></div>
+      <script>
+        $(function () {
+          $("#nav-placeholder").load("Repeat/navheader.html");
+        });
+      </script>
+
+      <div class="rulescontainer">
+        <div class="ruleswrapper">
+          <h1>General Rules</h1>
+          <p> 1. The challenges will be played on <b> floor 12 only </b> . </p>
+          <p> 2. Every <b> 4 star character </b> is allowed. Even if you don't have a certain character c6,
+            it's hard to balance them per constellation. </p>
+          <p> 3. Every <b> 5 star standard banner character constellation </b> is allowed.
+            As these characters are usually not gaining huge increases in powerlevel,
+            combined with the rng aspect to get them in the first place,
+            I will not put any penalties on using them. </p>
+          <p> 4. Every <b> 5 star limited banner character constellation </b> will get penalties depending on how many constellations
+            you have on that character. For every constellation you have above c0, your clear times will be increased by 3 seconds. </p>
+          <p> 4a. The following characters receive another <b> 3 second penalty </b> upon using them: 
+             Hu Tao c1, Ayaka c2, Kazuha c2, Eula c6, Shenhe c6, Ganyu c6, Yelan c6. </p>
+          <p> 4b. The following character receive another <b> 20 second penalty </b> upon using them:
+            Raiden c2, Nahida c2. </p>
+          <p> 5. Every player has access to <b> 2 5 star weapons </b> . To keep things balanced, every refinement above r1 will have a 
+            3 second penalty. </p>
+          <p> 5a. <b> Battlepass weapons </b> are allowed, but if the refinement of the weapon is higher than r3, it will have a 3 second penalty</p>
+        </div>
+        <div class="ruleswrapper">
+          <h1>Walmart Bets Rules</h1>
+          <p> 1. Everyone will start with a certain budget. The budget will change each cycle and will be displayed at the
+            <a href="/ProjectWB/shop.html" class="shop-link">shop</a>.</p>
+          <p> 2. The player will then use their budget to <b> buy up to 8 characters </b> from 
+          the shop and add them to their team. The cost of the shop units are determined by their performance and value from 
+          general knowledge. </p>
+          <p> 3. You are <b> not allowed to overspend </b> on points. Underspending on points however, will reward the player with 
+          a <b> reduction of 5 seconds </b> of their total clear time per point not used. </p>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+</body>
+
+</html>

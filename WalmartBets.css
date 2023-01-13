@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+
+}
+
+body {}
+
+.capsule {
+    background-color: #1d1d1d;
+    min-height: 100vh;
+    width: 100%;
+    color: #fff;
+    position: relative;
+}
+
+/* Fonts ---------------------------- */
+
+@font-face {
+    font-family: Cunia;
+    src: url(/ProjectWB/Fonts/Cunia.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url(/ProjectWB/Fonts/Roboto-Black.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url(/ProjectWB/Fonts/Roboto-Light.ttf);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(/ProjectWB/Fonts/Roboto-Regular.ttf);
+    font-weight: 900;
+}
+
+/* Nav header CSS ---------------------------- */
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+nav .logo {
+    height: auto;
+    max-width: 8%;
+    /*cursor: pointer;*/
+}
+
+nav ul {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 30px;
+}
+
+nav ul li a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+#title {
+    margin-left: 20px;
+    font-family: 'Cunia';
+    font-size: 40px;
+    color:#2196c4;
+}
+
+button {
+    background: #efefef;
+    height: 30px;
+    width: 60px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+.buff{
+    color: rgb(0, 255, 101);
+}
+
+.nerf{
+    color: rgb(255, 36, 36);
+}
+
+.scroller {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    background-color:#2196c4;
+}
+
+.scroller h2 {
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -moz-animation: scrolleranim 15s linear infinite;
+    -webkit-animation: scrolleranim 15s linear infinite;
+    animation: scrolleranim 15s linear infinite;
+}
+
+@-moz-keyframes scrolleranim {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes scrolleranim {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes scrolleranim {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* How To Play CSS ---------------------------- */
+
+.howtoplaycontainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background: url("/ProjectWB/Images/SeiraiIsland.jpg");
+    width: 100%;
+    height: 800px;
+}
+
+.howtoplaywrapper {
+    background: rgb(183, 89, 255, 0.5);
+    margin: 20px;
+    width: 50%;
+    height: 80%;
+    border-radius: 20px;
+}
+
+.howtoplaywrapper h1 {
+    margin: 20px;
+    font-family: 'Roboto-black';
+    text-align: center;
+}
+
+.howtoplaywrapper p {
+    margin: 20px;
+    font-family: 'Roboto-light';
+    font-size: 20px;
+}
+
+.howtoplaybackground {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.video-popup {
+    position: relative;
+    background: #1d1d1d;
+    padding: 20px;
+    max-width: 1000px;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.video-popup-link {
+    background-color: rgb(183, 89, 255);
+    color: #efefef;
+    font-family: Roboto-light;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-left: 50px;
+    padding: 10px;
+}
+
+#exampleVideo {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#exampleVideo iframe {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Rules CSS ---------------------------- */
+
+.rulescontainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background: url("/ProjectWB/Images/Spiralabyss.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.ruleswrapper {
+    background: rgb(81, 162, 255, 0.75);
+    margin: 20px;
+    width: 50%;
+    height: 90%;
+    border-radius: 20px;
+}
+
+.ruleswrapper h1 {
+    margin: 20px;
+    text-align: center;
+    color: white;
+    font-family: 'Roboto-Black';
+}
+
+.ruleswrapper p {
+    margin: 2% 5%;
+    color: white;
+    font-size: 20px;
+    font-family: 'Roboto-Regular';
+}
+
+
+
+.rulesbackground {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.shop-link {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+/*Shop CSS ----------------------------  */
+.shopcontainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: black
+}
+
+.shoprow2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shopcontainer h1 {
+    color: white;
+    align-self: center;
+    margin: 10px;
+}
+
+.shopimage {
+    width: 1000px;
+}
+
+.shoprules {
+    background-color: #1d1d1d;
+    border-radius: 15px;
+    height: 80vh;
+    width: 40vh;
+}
+
+.shoprules p {
+    margin: 10px;
+}
+
+/*Leaderboard CSS ---------------------------- */
+
+/*Balance Notes CSS ---------------------------- */
+.balancenotescontainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url("/ProjectWB/Images/Constellation.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#balancetext{
+    background:rgba(48, 53, 176, 0.75);
+    margin: 20px;
+    width: 50%;
+    height: fit-content;
+    border-radius: 20px;
+}
+#balancetext h1 {
+    text-align: center;
+    font-family: 'Roboto-Black';
+}
+#balancetext p {
+    font-family: 'Roboto-Light';
+    font-size: 20px;
+    margin: 10px;
+}
+
+#balancelist {
+    margin: 20px;
+    display: block;
+    overflow: auto;
+    list-style: none;
+}
+.balancerow1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#balancelist a.icon{
+    float: left;
+}
+#balancelist li {
+    float: left;
+    text-align: center;
+    width: 120px;
+    background:rgba(48, 53, 176, 0.75);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* font: stencil */
