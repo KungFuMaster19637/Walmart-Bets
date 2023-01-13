@@ -73,6 +73,7 @@ nav ul li a {
 
 #title {
     margin-left: 20px;
+    text-decoration: none;
     font-family: 'Cunia';
     font-size: 40px;
     color:#2196c4;
@@ -144,6 +145,48 @@ button {
     100% {
         transform: translateX(-100%);
     }
+}
+
+#footer {
+    background-color: black;
+    padding: 2%;
+}
+
+#footer p {
+    font-size: 14px;
+    text-align: center;
+}
+/* Index CSS ---------------------------- */
+
+.indexcontainer {
+    margin: 0%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/ProjectWB/Images/YelanGif.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 800px;
+}
+
+.indexcontainer a {
+    background-color: #1d1d1d;
+    border-radius: 25px;
+    padding: 2%;
+    color: #2196c4;
+    font-family: "Cunia";
+}
+
+#randomVideo {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#randomVideo iframe {
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* How To Play CSS ---------------------------- */

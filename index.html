@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <title>Title Here</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/magnific-popup.min.css">
+    <link rel="stylesheet" href="WalmartBets.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="capsule">
+            <div id="nav-placeholder"></div>
+            <script>
+                $(function () {
+                    $("#nav-placeholder").load("Repeat/navheader.html");
+                });
+            </script>
+            <div class="indexcontainer">
+                <a href="#randomVideo" class="video-popup-link" onclick="getRandomVideo()"> Welcome to Walmart Bets </a>
+                <div id="randomVideo" class="video-popup mfp-hide embed-responsive">
+                    <iframe id="videoFrame" class="embed-responsive-item" height="540px"
+                        src="" frameborder="0"
+                        allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div id="footer"></div>
+            <script>
+                $(function () {
+                    $("#footer").load("Repeat/footer.html");
+                });
+            </script>
+        </div>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+        integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function ($) {
+            /*alert("here");*/
+            $('.video-popup-link').magnificPopup({
+                type: 'inline',
+                midClick: true
+            }); 
+        });
+    </script>
+    
+    <script>
+        function getRandomVideo()
+        {
+            let videoLink = 
+            [
+            "https://www.youtube.com/embed/A2kvmfkDbaA",
+            "https://www.youtube.com/embed/i-Vsug0JvlQ",
+            "https://youtube.com/embed/LSZALStj0Ow",
+            "https://www.youtube.com/embed/pGR1GnnWUhI",
+            "https://youtube.com/embed/-fAbOnP1stI"
+            ];
+            let randomVideo = videoLink[Math.floor(Math.random()*videoLink.length)];
+            document.getElementById("videoFrame").src = randomVideo;
+        }
+    </script>
+</body>
+
+</html>
