@@ -9,6 +9,7 @@
     <link rel="icon" href="/ProjectWB/Images/Dice.png">
     <link rel="stylesheet" href="WalmartBets.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="/ProjectWB/WalmartBets.js"></script>
 </head>
 
 <body>
@@ -20,16 +21,33 @@
                     $("#nav-placeholder").load("Repeat/navheader.html");
                 });
             </script>
+            <div class="balancenotescontainer">
+                <div class="balancehistory">
+                    <div class="balancerow1">
+                        <ul id="balancelist">
+                        </ul>
+                    </div>
+                </div>
+                <div id="balancetext">
+                </div>
+            </div>
             <div class="shopcontainer">
-                <h1>Walmart Shop 3.3 - 3.4</h1>
+                <h1>Walmart Shop</h1>
                 <div class="shoprow2">
-                    <img src="/ProjectWB/Images/Tierlist3.3.png" class="shopimage">
+                    <img src="/ProjectWB/Shop/TierlistCycle6.png" class="shop-image" id="shop-cycle">
                     <div class="shoprules">
                         <h1>Additional Notes</h1>
-                        <p>Budget of this rotation: 60</p>
-                        <p>Dendro Traveler is Lumine <b>(4 cost)</b></p>
-                        <p>Anemo Traveler is Aether <b>(2 cost)</b></p>
+                        <p>Lumine is Dendro Traveler </p>
+                        <p>Aether is Anemo Traveler </p>
+                        <p>The other Travelers are <b>(0 cost)</b></p>
                         <p>Xiangling when paired with Bennett will have an extra <b>(2 cost)</b></p>
+                        <div id="discounts">
+                            <h1>Discounts</h1>
+                            <p>Sucrose and Hu Tao 25% off 8 -> 6</p>
+                            <p>Mona 50% off 6 -> 3</p>
+                            <p>Yunjin 50% off 4 -> 2</p>
+                            <p>Gorou 100% off 4 -> 0</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -41,6 +59,10 @@
             </script>
         </div>
     </main>
+    <script>
+        loadCycle(7);
+        loadBalanceHistory(7);
+    </script>
 </body>
 
 </html>

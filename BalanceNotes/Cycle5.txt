@@ -1,5 +1,5 @@
-3.3 - 3.4 
-Cycle 5
+3.3 - 3.4 Cycle 5
+Budget: 56
 1. Seeing as some players are struggling to build even clearable team, I've decided to upgrade the budget even more to give a little bit more options.
 2. Zhongli ⬆️ 1 tier: With the return of the Golden Wolflord, Zhongli's value has increased as it is the number 1 go to geo unit to deal with it. Making him cost a little bit more should push players towards more interesting options. 
 3. Ayaka ⬇️ 1 tier: The cryo queen has yet to see play as her teammates are usually too expensive to be paired with. Combined with another unfavoured Cryo abyss should make her less favourable to be picked up. Downing her cost could put her back on the menu.

@@ -2,66 +2,124 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
-  <title>Walmart Bets</title>
-  <link rel="icon" href="/ProjectWB/Images/Dice.png">
-  <link rel="stylesheet" href="WalmartBets.css">
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="/ProjectWB/WalmartBets.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <title>Walmart Bets</title>
+    <!-- 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    -->
+    <link rel="icon" href="/ProjectWB/Images/Background/Dice.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/magnific-popup.min.css">
+    <link rel="stylesheet" href="WalmartBets.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="/ProjectWB/WalmartBets.js"></script>
 </head>
 
 <body>
-  <main>
-    <div class="capsule">
-      <div id="nav-placeholder"></div>
-      <script>
-        $(function () {
-          $("#nav-placeholder").load("Repeat/navheader.html");
+    <main>
+        <div class="capsule">
+            <div id="nav-placeholder"></div>
+            <script>
+                $(function () {
+                    $("#nav-placeholder").load("Repeat/navheader.html");
+                });
+            </script>
+            <div class="rulescontainer">
+                <div class="ruleswrapper">
+                    <h1>General Rules</h1>
+                  <p> 1. The challenges will be played on <b> floor 12 only </b> . </p>
+                  <p> 2. Every <b> 4 star character </b> is allowed. Even if you don't have a certain character c6,
+                    it's hard to balance them per constellation. </p>
+                  <p> 3. Every <b> 5 star standard banner character constellation </b> is allowed.
+                    As these characters are usually not gaining huge increases in powerlevel,
+                    combined with the rng aspect to get them in the first place,
+                    I will not put any penalties on using them. </p>
+                  <p> 4. Every <b> 5 star limited banner character constellation </b> will get penalties depending on how many constellations
+                    you have on that character. For every constellation you have above c0, your clear times will be increased by 3 seconds. </p>
+                  <p> 4a. The following characters receive another <b> 3 second penalty </b> upon using them: 
+                     Hu Tao c1, Ayaka c2, Kazuha c2, Eula c6, Shenhe c6, Ganyu c6, Yelan c6. </p>
+                  <p> 4b. The following character receive another <b> 20 second penalty </b> upon using them:
+                    Raiden c2, Nahida c2. </p>
+                  <p> 5. Every player has access to <b> 2 5 star weapons </b> . To keep things balanced, every refinement above r1 will have a 
+                    3 second penalty. </p>
+                  <p> 5a. <b> Battlepass weapons </b> are allowed, but if the refinement of the weapon is higher than r3, it will have a 3 second penalty</p>
+                  <h1>Walmart Bets Rules</h1>
+                  <p> 1. Everyone will start with a certain budget. The budget will change each cycle and will be displayed at the
+                    <a href="/ProjectWB/shop.html" class="shop-link">shop</a>.</p>
+                  <p> 2. The player will then use their budget to <b> buy up to 8 characters </b> from 
+                  the shop and add them to their team. The cost of the shop units are determined by their performance and value from 
+                  general knowledge. </p>
+                  <p> 3. You are <b> not allowed to overspend </b> on points. Underspending on points however, will reward the player with 
+                  a <b> reduction of 5 seconds </b> of their total clear time per point not used. </p>
+                </div>
+                <!-- 
+                    Pop-up
+                    <a href="#exampleVideo"class="video-popup-link">
+                        Example run</a>
+                        <div id="exampleVideo" class="video-popup mfp-hide embed-responsive">
+                            <iframe class="embed-responsive-item" height="540px"
+                            src="https://www.youtube.com/embed/A2kvmfkDbaA" frameborder="0"
+                            allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+                        </div>
+                    -->
+            </div>
+            <div class="howtoplaycontainer">
+                <div class="howtoplaywrapper">
+                    <h1>How To Play</h1>
+                    <p>1. To enter the leaderboard, you will have to record a video of your run and upload it to
+                        YouTube.</p>
+                    <p>2. The run has to be in 1 go. You can reset the floor if you want to but you can't reset the
+                        whole run
+                        by exiting abyss and redoing a chamber for energy, that would count as a seperate run. </p>
+                    <p>
+                        3. After recording and uploading your run, send a link to the appropiate channel. </p>
+                    <p> 3a. If you have the time for it, also put your weapons used, your character cons and cleartimes
+                        in
+                        the description of the video or in the channel itself. </p>
+                    <p> 3b. If you know how the penalty system works you could also calculate for yourself what your
+                        total clear time is, I would appreciate it. </p>
+                    <p>
+                        4. The leaderboard will be ranked on the following criteria:<br>
+                        a. Stars <br>
+                        b. Total clear time <br>
+                        c. Points used <br>
+                        Example: Player 1 cleared with 9 stars and total clear time 7:58 and used 60 points,
+                        Player 2 cleared with 8 stars and total clear time 7:15 and used 58 points.
+                        Player 1 will be ranked above Player 2 due to stars being more important than clear time and
+                        points used.
+                    </p>
+                </div>
+                <div id="exampleVideo" class="video-popup">
+                  <iframe class="embed-responsive-item" height="440px"
+                  src="https://www.youtube.com/embed/A2kvmfkDbaA" frameborder="0"
+                  allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div id="footer"></div>
+            <script>
+                $(function () {
+                    $("#footer").load("Repeat/footer.html");
+                });
+            </script>
+        </div>
+    </main>
+    <!-- 
+        Pop-up script
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+        integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            $(document).ready(function($) {
+                $('.video-popup-link').magnificPopup({
+                type: 'inline',
+                midClick: true
+            });
         });
-      </script>
-
-      <div class="rulescontainer">
-        <div class="ruleswrapper">
-          <h1>General Rules</h1>
-          <p> 1. The challenges will be played on <b> floor 12 only </b> . </p>
-          <p> 2. Every <b> 4 star character </b> is allowed. Even if you don't have a certain character c6,
-            it's hard to balance them per constellation. </p>
-          <p> 3. Every <b> 5 star standard banner character constellation </b> is allowed.
-            As these characters are usually not gaining huge increases in powerlevel,
-            combined with the rng aspect to get them in the first place,
-            I will not put any penalties on using them. </p>
-          <p> 4. Every <b> 5 star limited banner character constellation </b> will get penalties depending on how many constellations
-            you have on that character. For every constellation you have above c0, your clear times will be increased by 3 seconds. </p>
-          <p> 4a. The following characters receive another <b> 3 second penalty </b> upon using them: 
-             Hu Tao c1, Ayaka c2, Kazuha c2, Eula c6, Shenhe c6, Ganyu c6, Yelan c6. </p>
-          <p> 4b. The following character receive another <b> 20 second penalty </b> upon using them:
-            Raiden c2, Nahida c2. </p>
-          <p> 5. Every player has access to <b> 2 5 star weapons </b> . To keep things balanced, every refinement above r1 will have a 
-            3 second penalty. </p>
-          <p> 5a. <b> Battlepass weapons </b> are allowed, but if the refinement of the weapon is higher than r3, it will have a 3 second penalty</p>
-        </div>
-        <div class="ruleswrapper">
-          <h1>Walmart Bets Rules</h1>
-          <p> 1. Everyone will start with a certain budget. The budget will change each cycle and will be displayed at the
-            <a href="/ProjectWB/shop.html" class="shop-link">shop</a>.</p>
-          <p> 2. The player will then use their budget to <b> buy up to 8 characters </b> from 
-          the shop and add them to their team. The cost of the shop units are determined by their performance and value from 
-          general knowledge. </p>
-          <p> 3. You are <b> not allowed to overspend </b> on points. Underspending on points however, will reward the player with 
-          a <b> reduction of 5 seconds </b> of their total clear time per point not used. </p>
-        </div>
-      </div>
-      <div id="footer"></div>
-      <script>
-          $(function () {
-              $("#footer").load("Repeat/footer.html");
-          });
-      </script>
-    </div>
-  </main>
+    </script>
+    -->
 </body>
 
 </html>

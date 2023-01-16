@@ -80,7 +80,7 @@ nav .navBar .icon {
     display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     .navBar a:not(:first-child) {
         display: none;
     }
@@ -91,7 +91,7 @@ nav .navBar .icon {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     .narBar.responsive {
         position: relative;
     }
@@ -221,14 +221,13 @@ Sticky Nav
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("/ProjectWB/Images/YelanGif.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 800px;
 }
 
 .indexcontainer a {
+    position: absolute;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #1d1d1d;
     border-radius: 25px;
     padding: 2%;
@@ -236,56 +235,10 @@ Sticky Nav
     font-family: "Cunia";
 }
 
-#randomVideo {
-    width: 75%;
-    margin: 0 auto;
-}
-
-#randomVideo iframe {
+.index-video{
     width: 100%;
-    margin: 0 auto;
+    height: auto;
 }
-
-/* How To Play CSS ---------------------------- */
-
-.howtoplaycontainer {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    background: url("/ProjectWB/Images/SeiraiIsland.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
-
-.howtoplaywrapper {
-    background: rgb(183, 89, 255, 0.5);
-    margin: 20px;
-    width: 50%;
-    height: 100%;
-    border-radius: 20px;
-}
-
-.howtoplaywrapper h1 {
-    margin: 20px;
-    font-family: 'Roboto-black';
-    text-align: center;
-}
-
-.howtoplaywrapper p {
-    margin: 20px;
-    font-family: 'Roboto-light';
-    font-size: 20px;
-}
-
-.howtoplaybackground {
-    max-height: 100%;
-    max-width: 100%;
-}
-
 .video-popup {
     position: relative;
     background: #1d1d1d;
@@ -305,12 +258,12 @@ Sticky Nav
     padding: 10px;
 }
 
-#exampleVideo {
+#random-video {
     width: 75%;
     margin: 0 auto;
 }
 
-#exampleVideo iframe {
+#random-video iframe {
     width: 100%;
     margin: 0 auto;
 }
@@ -322,39 +275,61 @@ Sticky Nav
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    background: url("/ProjectWB/Images/Spiralabyss.jpeg");
+    flex-direction: column;
+    background: url("/ProjectWB/Images/Background/Spiralabyss.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    margin-bottom: 5px;
 }
 
 .ruleswrapper {
     background: rgb(81, 162, 255, 0.75);
     margin: 20px;
     width: 50%;
+    min-width: 70%;
     height: 90%;
     border-radius: 20px;
 }
 
-.ruleswrapper h1 {
+.howtoplaycontainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url("/ProjectWB/Images/Background/SeiraiIsland.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.howtoplaywrapper {
+    background: rgb(183, 89, 255, 0.8);
+    margin: 20px;
+    width: 50%;
+    min-width: 70%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.ruleswrapper h1, .howtoplaywrapper h1 {
     margin: 20px;
     text-align: center;
     color: white;
     font-family: 'Roboto-Black';
 }
 
-.ruleswrapper p {
+.ruleswrapper p, .howtoplaywrapper p {
     margin: 2% 5%;
     color: white;
     font-size: 20px;
     font-family: 'Roboto-Regular';
 }
 
-
-
-.rulesbackground {
+.rulesbackground, .howtoplaybackground {
     max-height: 100%;
     max-width: 100%;
 }
@@ -365,7 +340,22 @@ Sticky Nav
     font-weight: bold;
 }
 
+
+#exampleVideo {
+    height: 10%;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+}
+
+#exampleVideo iframe {
+    width: 100%;
+    margin: 0 auto;
+}
+
 /*Shop CSS ----------------------------  */
+
 .shopcontainer {
     position: relative;
     display: flex;
@@ -385,7 +375,7 @@ Sticky Nav
     margin: 10px;
 }
 
-.shopimage {
+.shop-image {
     width: 1000px;
 }
 
@@ -400,27 +390,25 @@ Sticky Nav
     margin: 10px;
 }
 
-/*Leaderboard CSS ---------------------------- */
-
-/*Balance Notes CSS ---------------------------- */
 .balancenotescontainer {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: url("/ProjectWB/Images/Constellation.jpg");
+    background: url("/ProjectWB/Images/Background/Constellation.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-
+    
 }
 
 #balancetext {
     background: rgba(48, 53, 176, 0.75);
     margin: 20px;
     width: 50%;
+    min-width: 70%;
     height: fit-content;
     border-radius: 20px;
 }
@@ -462,5 +450,7 @@ Sticky Nav
     text-decoration: none;
     cursor: pointer;
 }
+
+/*Leaderboard CSS ---------------------------- */
 
 /* font: stencil */

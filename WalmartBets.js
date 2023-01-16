@@ -1,15 +1,71 @@
 function readTextFile(file) {
-    var rawFile = new XMLHttpRequest();
+    let rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, false);
     rawFile.onreadystatechange = function () {
         if (rawFile.readyState === 4) {
             if (rawFile.status === 200 || rawFile.status == 0) {
-                var allText = rawFile.responseText;
-                return (allText);
+                
+                // Removes all text of the balancetext div
+                const resetText = document.getElementById("balancetext");
+                while(resetText.lastElementChild){
+                    resetText.removeChild(resetText.lastElementChild);
+                }
+                
+                // Writes the new text of balancetext div
+                let allText = rawFile.responseText;
+                let lines = allText.split('\n');
+                for (let line = 0; line < lines.length; line++) {
+                    let paragraph;
+                    if (line === 0 || line === 1) {
+                        paragraph = document.createElement("h1");
+                    }
+                    else {
+                        paragraph = document.createElement("p");
+                    }
+
+                    paragraph.textContent += `${lines[line]} \r\n`;
+                    document.getElementById("balancetext").appendChild(paragraph);
+                }
             }
         }
     }
     rawFile.send(null);
+}
+
+function loadShop(cycle) {
+    document.getElementById("shop-cycle").setAttribute("src", `/ProjectWB/Shop/TierlistCycle${cycle}.png`)
+}
+
+function loadCycle(cycle){
+    loadShop(cycle);
+    readTextFile(`BalanceNotes/Cycle${cycle}.txt`);
+    cycle != 7 ? document.getElementById("discounts").style.display = "none" : document.getElementById("discounts").style.display = "block";
+}
+
+function loadBalanceHistory(cycle){
+    for (let count = 1; count <= cycle; count++)
+    {
+        let listItem;
+        listItem = document.createElement("li");
+        listItem.setAttribute("onclick", `loadCycle(${count})`);
+        listItem.textContent = `Cycle ${count}`;
+        document.getElementById("balancelist").appendChild(listItem);
+    }
+}
+
+function loadBudget(cycle)
+{
+
+}
+
+function openHistory(){
+    let list = document.getElementById("balancelist");
+    if (list.style.display === "block"){
+        list.style.display = "none";
+    }
+    else{
+        list.style.display = "block";
+    }
 }
 
 function collapseNav() {

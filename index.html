@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
     <title>Walmart Bets</title>
-    <link rel="icon" href="/ProjectWB/Images/Dice.png">
+    <link rel="icon" href="/ProjectWB/Images/Background/Dice.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.1/magnific-popup.min.css">
     <link rel="stylesheet" href="WalmartBets.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -24,8 +24,11 @@
                 });
             </script>
             <div class="indexcontainer">
-                <a href="#randomVideo" class="video-popup-link" onclick="getRandomVideo()"> Welcome to Walmart Bets </a>
-                <div id="randomVideo" class="video-popup mfp-hide embed-responsive">
+                <video autoplay loop class="index-video">
+                    <source src="/ProjectWB/Videos/YelanVid.mp4">
+                </video>
+                <a href="#random-video" class="video-popup-link" onclick="getRandomVideo()"> Welcome to Walmart Bets </a>
+                <div id="random-video" class="video-popup mfp-hide embed-responsive">
                     <iframe id="videoFrame" class="embed-responsive-item" height="540px"
                         src="" frameborder="0"
                         allow="autoplay; encrypted-media;" allowfullscreen></iframe>

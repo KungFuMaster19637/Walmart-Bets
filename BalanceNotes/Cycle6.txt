@@ -1,5 +1,5 @@
-3.3 – 3.4
-Cycle 6
+3.3 – 3.4 Cycle 6
+Budget: 60
 1. Some 5* constellations are still straight up too strong and need further balancing to make them less likely to be used: Both Raiden C2 and Nahida C2 will be changed to a 20 second penalty (making them 25 second penalties when used). In case you use Hyperbloom Raiden while having C2, it will go back to a 10 second penalty (so 15 in total for a Raiden C2).
 2. Another common trend I’ve noticed is that some units are probably never going to be used as standalone unit because of their cost: Xiangling. To fight that issue, I’ve decided to move Xiangling down 1 tier and give her a special condition, where she will cost an additional 2 points when paired with Bennett. 
 3. Ganyu ⬆️  1 tier: Melt Ganyu has been tearing up the second half by bringing only 3 units. The 4th slot usually doesn’t matter and is there to fill in how much budget the player has left. Bringing her up 1 cost should incentivize players to look for other possibilities. 

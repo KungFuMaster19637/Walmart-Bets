@@ -1,5 +1,5 @@
-3.2 - 3.3
-Cycle 3
+3.2 - 3.3 Cycle 3 
+Budget: 50
 1. Everyone at 10 cost is now 12; everyone at 8 cost is now 10; everyone at 6 cost is now 8; everyone at 5 cost is now 6. This is to encourage players to take more units from the bottom half, giving the fact that you also got some more budget than previous rotation to spend your units on. To prevent from everyone taking 3 of the 10 cost units and still having lots of points left, I have decided to increase the cost of these major units by a small amount. 
 2. Hu Tao/Ayato/Ganyu ⬇️ 1 tier: Looking at the previous rotation, people couldn't pick these units as most of their supporting units were high cost as well, making them a very costly unit to pick. By bringing them down one tier, this might be more balanced for the character itself.
 3.  Venti ⬆️ 1 tier: Eventhough he wasn't used last rotation (due to the overwhelming amount of nilou users) he seems like a cheat pick for first half right now, as 2 out of 3 chambers are easily sucked in to ensure you have very fast times. To balance that out, I've decided to move venti up a tier.
