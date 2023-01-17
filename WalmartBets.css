@@ -134,22 +134,24 @@ button {
 }
 
 .nerf {
-    color: rgb(255, 36, 36);
+    color: rgb(223, 37, 37);
 }
 
 .scroller {
-    height: 50px;
-    overflow: hidden;
     position: relative;
-    background-color: #2196c4;
+    height: 80px;
+    overflow: hidden;
+    background-color:rgba(6, 7, 30, 0.5);
+
 }
 
-.scroller h2 {
+.scroller-background {
     position: absolute;
+    display: flex;
     width: max-content;
     height: 100%;
     margin: 0;
-    line-height: 50px;
+    line-height: 60px;
     text-align: center;
     -moz-transform: translateX(100%);
     -webkit-transform: translateX(100%);
@@ -157,6 +159,15 @@ button {
     -moz-animation: scrolleranim 15s linear infinite;
     -webkit-animation: scrolleranim 15s linear infinite;
     animation: scrolleranim 15s linear infinite;
+    
+}
+
+.scroller-image {
+    margin-top: 10px;
+    margin-left: 15px;
+    vertical-align: middle;
+    width: auto; 
+    height: 80%;
 }
 
 /*
@@ -370,23 +381,29 @@ Sticky Nav
 }
 
 .shopcontainer h1 {
+    font-size: 4vh;
     color: white;
     align-self: center;
     margin: 10px;
 }
 
 .shop-image {
-    width: 1000px;
+    height: auto;
+    width: 60%;
 }
 
 .shoprules {
     background-color: #1d1d1d;
     border-radius: 15px;
-    height: 80vh;
-    width: 40vh;
+    height: auto;
+    width: 30%;
 }
 
+.shoprules h1 {
+    font-size: 4vh;
+}
 .shoprules p {
+    font-size: 3vh;
     margin: 10px;
 }
 
