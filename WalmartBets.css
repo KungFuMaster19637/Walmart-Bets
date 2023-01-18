@@ -48,28 +48,29 @@ nav {
     padding: 10px 5%;
 }
 
-nav .logo {
+.logo {
+    vertical-align: middle;
     height: max-content;
-    max-width: 8%;
-    /*cursor: pointer;*/
+    width: 8vw;
+    cursor: pointer;
 }
 
 nav .navBar {
+    float: left;
     z-index: 10;
-    flex: 1;
+    display: block;
     overflow: hidden;
-    text-align: right;
+    width: 100%;
+    text-align: left;
 }
 
 nav .navBar a {
-    float: left;
-    display: block;
     font-size: 150%;
     flex-wrap: wrap;
     text-decoration: none;
     color: white;
     list-style: none;
-    margin: 0 30px;
+    margin: 0px 1.5vw;
 }
 
 nav .navBar a:hover {
@@ -80,7 +81,7 @@ nav .navBar .icon {
     display: none;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1050px) {
     .navBar a:not(:first-child) {
         display: none;
     }
@@ -91,15 +92,15 @@ nav .navBar .icon {
     }
 }
 
-@media screen and (max-width: 900px) {
-    .narBar.responsive {
+@media screen and (max-width: 1050px) {
+    .navBar.responsive {
         position: relative;
     }
 
     .navBar.responsive .icon {
         position: absolute;
-        right: 0;
         top: 0;
+        right: 0;
     }
 
     .navBar.responsive a {
@@ -117,56 +118,47 @@ nav .navBar .icon {
     color: #2196c4;
 }
 
-/*
-button {
-    background: #efefef;
-    height: 30px;
-    width: 60px;
-    border-radius: 20px;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
+.buff, .nerf{
+    flex-shrink: 0;
+    font-size: 3vh;
 }
-*/
 
 .buff {
     color: rgb(0, 255, 101);
 }
 
 .nerf {
-    color: rgb(223, 37, 37);
+    color: rgb(255, 71, 71);
 }
 
 .scroller {
     position: relative;
+    width: 100%;
     height: 80px;
     overflow: hidden;
-    background-color:rgba(6, 7, 30, 0.5);
+    background-color:rgba(48, 53, 176, 0.75);
 
 }
 
 .scroller-background {
-    position: absolute;
     display: flex;
-    width: max-content;
+    justify-content: center;
     height: 100%;
-    margin: 0;
-    line-height: 60px;
-    text-align: center;
+
     -moz-transform: translateX(100%);
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
     -moz-animation: scrolleranim 15s linear infinite;
     -webkit-animation: scrolleranim 15s linear infinite;
     animation: scrolleranim 15s linear infinite;
-    
+
 }
 
 .scroller-image {
     margin-top: 10px;
     margin-left: 15px;
     vertical-align: middle;
-    width: auto; 
+    width: auto;
     height: 80%;
 }
 
@@ -246,10 +238,11 @@ Sticky Nav
     font-family: "Cunia";
 }
 
-.index-video{
+.index-video {
     width: 100%;
     height: auto;
 }
+
 .video-popup {
     position: relative;
     background: #1d1d1d;
@@ -281,7 +274,7 @@ Sticky Nav
 
 /* Rules CSS ---------------------------- */
 
-.rulescontainer {
+.rules-container {
     position: relative;
     display: flex;
     align-items: center;
@@ -295,7 +288,7 @@ Sticky Nav
     margin-bottom: 5px;
 }
 
-.ruleswrapper {
+.rules-wrapper {
     background: rgb(81, 162, 255, 0.75);
     margin: 20px;
     width: 50%;
@@ -304,7 +297,7 @@ Sticky Nav
     border-radius: 20px;
 }
 
-.howtoplaycontainer {
+.howtoplay-container {
     position: relative;
     display: flex;
     align-items: center;
@@ -317,7 +310,7 @@ Sticky Nav
     background-position: center;
 }
 
-.howtoplaywrapper {
+.howtoplay-wrapper {
     background: rgb(183, 89, 255, 0.8);
     margin: 20px;
     width: 50%;
@@ -326,21 +319,24 @@ Sticky Nav
     border-radius: 20px;
 }
 
-.ruleswrapper h1, .howtoplaywrapper h1 {
+.rules-wrapper h1,
+.howtoplay-wrapper h1 {
     margin: 20px;
     text-align: center;
     color: white;
     font-family: 'Roboto-Black';
 }
 
-.ruleswrapper p, .howtoplaywrapper p {
+.rules-wrapper p,
+.howtoplay-wrapper p {
     margin: 2% 5%;
     color: white;
     font-size: 20px;
     font-family: 'Roboto-Regular';
 }
 
-.rulesbackground, .howtoplaybackground {
+.rules-background,
+.howtoplay-background {
     max-height: 100%;
     max-width: 100%;
 }
@@ -367,20 +363,20 @@ Sticky Nav
 
 /*Shop CSS ----------------------------  */
 
-.shopcontainer {
+.shop-container {
     position: relative;
     display: flex;
     flex-direction: column;
     background-color: black
 }
 
-.shoprow2 {
+.shop-row {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.shopcontainer h1 {
+.shop-container h1 {
     font-size: 4vh;
     color: white;
     align-self: center;
@@ -392,22 +388,23 @@ Sticky Nav
     width: 60%;
 }
 
-.shoprules {
+.shop-rules {
     background-color: #1d1d1d;
     border-radius: 15px;
     height: auto;
     width: 30%;
 }
 
-.shoprules h1 {
+.shop-rules h1 {
     font-size: 4vh;
 }
-.shoprules p {
+
+.shop-rules p {
     font-size: 3vh;
     margin: 10px;
 }
 
-.balancenotescontainer {
+.balancenotes-container {
     position: relative;
     display: flex;
     align-items: center;
@@ -418,10 +415,17 @@ Sticky Nav
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    
+
 }
 
-#balancetext {
+.balance-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#balance-text {
     background: rgba(48, 53, 176, 0.75);
     margin: 20px;
     width: 50%;
@@ -430,44 +434,55 @@ Sticky Nav
     border-radius: 20px;
 }
 
-#balancetext h1 {
+
+#balance-text h1 {
     text-align: center;
     font-family: 'Roboto-Black';
 }
 
-#balancetext p {
+#balance-text p {
     font-family: 'Roboto-Light';
     font-size: 20px;
     margin: 10px;
 }
 
-#balancelist {
+#balance-list {
     margin: 20px;
     display: block;
     overflow: auto;
     list-style: none;
 }
 
-.balancerow1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-#balancelist a.icon {
+#balance-list a.icon {
     float: left;
 }
 
-#balancelist li {
+#balance-list li {
     float: left;
     text-align: center;
-    width: 120px;
+    width: 10vw;
     background: rgba(48, 53, 176, 0.75);
     text-decoration: none;
     cursor: pointer;
 }
 
 /*Leaderboard CSS ---------------------------- */
+
+.leaderboard-container {
+    display: flex;
+    justify-content: center;
+}
+
+.leaderboard-container table {
+    width: 90%;
+    text-align: center;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.leaderboard-container th, .leaderboard-container td {
+    border: 1px solid;
+}
+
 
 /* font: stencil */

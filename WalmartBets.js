@@ -6,7 +6,7 @@ function readTextFile(file) {
             if (rawFile.status === 200 || rawFile.status == 0) {
                 
                 // Removes all text of the balancetext div
-                const resetText = document.getElementById("balancetext");
+                const resetText = document.getElementById("balance-text");
                 while(resetText.lastElementChild){
                     resetText.removeChild(resetText.lastElementChild);
                 }
@@ -24,7 +24,7 @@ function readTextFile(file) {
                     }
 
                     paragraph.textContent += `${lines[line]} \r\n`;
-                    document.getElementById("balancetext").appendChild(paragraph);
+                    document.getElementById("balance-text").appendChild(paragraph);
                 }
             }
         }
@@ -49,7 +49,7 @@ function loadBalanceHistory(cycle){
         listItem = document.createElement("li");
         listItem.setAttribute("onclick", `loadCycle(${count})`);
         listItem.textContent = `Cycle ${count}`;
-        document.getElementById("balancelist").appendChild(listItem);
+        document.getElementById("balance-list").appendChild(listItem);
     }
 }
 
@@ -59,7 +59,7 @@ function loadBudget(cycle)
 }
 
 function openHistory(){
-    let list = document.getElementById("balancelist");
+    let list = document.getElementById("balance-list");
     if (list.style.display === "block"){
         list.style.display = "none";
     }
