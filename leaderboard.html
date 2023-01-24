@@ -8,10 +8,14 @@
     <title>Walmart Bets</title>
     <link rel="icon" href="/ProjectWB/Images/Background/Dice.png">
     <link rel="stylesheet" href="WalmartBets.css">
-    <link rel="icon" href="" type="">
+    <link rel="stylesheet" href="/ProjectWB/Libraries/tabulator-master/dist/css/tabulator.min.css">
+    <link rel="stylesheet" href="/ProjectWB/Libraries/tabulator-master/dist/css/tabulator_site.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="/ProjectWB/Libraries/tabulator-master/dist/js/tabulator.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
     <script src="/ProjectWB/WalmartBets.js"></script>
-
 </head>
 
 <body>
@@ -23,25 +27,15 @@
                     $("#nav-placeholder").load("Repeat/navheader.html");
                 });
             </script>
+            <script>
+
+            </script>
             <div class="leaderboard-container">
-                <table>
-                    <tr>
-                        <th style="width: 5%;"> # </th>
-                        <th style="width: 15%;"> Player </th>
-                        <th style="width: 5%;"> Video </th>
-                        <th style="width: 15%;"> Total Time </th>
-                        <th style="width: 30%;"> Team 1 </th>
-                        <th style="width: 30%;"> Team 2 </th>
-                    </tr>
-                    <tr>
-                        <td> 1 </td>
-                        <td> somnustella </td>
-                        <td> . </td>
-                        <td> 3:45 + 50 - 60 = 3:78</td>
-                        <td> value 4</td>
-                        <td> value 5</td>
-                    </tr>
-                </table>
+                <div id="leaderboard-table">
+                    <script>
+                        readFromExcel();
+                    </script>
+                </div>
             </div>
             <div id="footer"></div>
             <script>

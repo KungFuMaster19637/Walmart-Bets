@@ -473,16 +473,17 @@ Sticky Nav
     justify-content: center;
 }
 
-.leaderboard-container table {
-    width: 90%;
-    text-align: center;
-    border: 1px solid;
-    border-collapse: collapse;
+#leaderboard-table {
+    width: 92%;
+    background-color: #1d1d1d;
 }
 
-.leaderboard-container th, .leaderboard-container td {
-    border: 1px solid;
+#leaderboard-table .tabulator-row .tabulator-cell {
+    color: white;
 }
 
+.video-run-link {
+    color: #efefef;
+}
 
 /* font: stencil */
