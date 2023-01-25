@@ -51,7 +51,7 @@ nav {
 .logo {
     vertical-align: middle;
     height: max-content;
-    width: 8vw;
+    width: 10%;
     cursor: pointer;
 }
 
@@ -479,7 +479,14 @@ Sticky Nav
 }
 
 #leaderboard-table .tabulator-row .tabulator-cell {
+    font-size: 100%;
     color: white;
+}
+
+.leaderboard-character-image {
+    margin: 0.5%;
+    max-height: 75%;
+    max-width: 25%;
 }
 
 .video-run-link {
