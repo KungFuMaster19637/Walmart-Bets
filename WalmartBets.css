@@ -118,7 +118,8 @@ nav .navBar .icon {
     color: #2196c4;
 }
 
-.buff, .nerf{
+.buff,
+.nerf {
     flex-shrink: 0;
     font-size: 3vh;
 }
@@ -136,7 +137,7 @@ nav .navBar .icon {
     width: 100%;
     height: 80px;
     overflow: hidden;
-    background-color:rgba(48, 53, 176, 0.75);
+    background-color: rgba(48, 53, 176, 0.75);
 
 }
 
@@ -479,13 +480,13 @@ Sticky Nav
 }
 
 #leaderboard-table .tabulator-row .tabulator-cell {
-    font-size: 100%;
+    font-size: 2vh;
     color: white;
 }
 
-.leaderboard-character-image {
+.leaderboard-character-image {  
     margin: 0.5%;
-    max-height: 75%;
+    max-height: 80%;
     max-width: 25%;
 }
 
