@@ -40,7 +40,7 @@ function loadShop(cycle) {
 function loadCycle(cycle) {
     loadShop(cycle);
     readTextFile(`BalanceNotes/Cycle${cycle}.txt`);
-    cycle != 7 ? document.getElementById("discounts").style.display = "none" : document.getElementById("discounts").style.display = "block";
+    cycle != 8 ? document.getElementById("discounts").style.display = "none" : document.getElementById("discounts").style.display = "block";
 }
 
 function loadBalanceHistory(cycle) {
