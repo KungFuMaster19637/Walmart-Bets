@@ -27,10 +27,10 @@
                 <video loop autoplay muted class="index-video">
                     <source src="/ProjectWB/Videos/YelanVid.mp4">
                 </video>
-                <a href="#random-video" class="video-popup-link" onclick="getRandomVideo()"> Welcome to Walmart Bets </a>
+                <a href="#random-video" class="video-popup-link" onclick="getRandomVideo()"> Welcome to Walmart Bets
+                </a>
                 <div id="random-video" class="video-popup mfp-hide embed-responsive">
-                    <iframe id="videoFrame" class="embed-responsive-item" height="540px"
-                        src="" frameborder="0"
+                    <iframe id="videoFrame" class="embed-responsive-item" height="540px" src="" frameborder="0"
                         allow="autoplay; encrypted-media;" allowfullscreen></iframe>
                 </div>
             </div>
@@ -42,7 +42,7 @@
             </script>
         </div>
     </main>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
         integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -52,21 +52,24 @@
             $('.video-popup-link').magnificPopup({
                 type: 'inline',
                 midClick: true
-            }); 
+            });
         });
     </script>
 
     <script>
-        function getRandomVideo()
-        {
-            let videoLink = 
-            [
-            "https://www.youtube.com/embed/A2kvmfkDbaA",
-            "https://www.youtube.com/embed/i-Vsug0JvlQ",
-            "https://youtube.com/embed/LSZALStj0Ow",
-            "https://www.youtube.com/embed/pGR1GnnWUhI",
-            "https://youtube.com/embed/-fAbOnP1stI"
-            ];
+        function getRandomVideo() {           
+            let videoLink =
+                [
+                    "https://www.youtube.com/embed/A2kvmfkDbaA",
+                    "https://www.youtube.com/embed/i-Vsug0JvlQ",
+                    "https://youtube.com/embed/LSZALStj0Ow",
+                    "https://www.youtube.com/embed/pGR1GnnWUhI",
+                    "https://youtube.com/embed/-fAbOnP1stI",
+                    "https://youtube.com/embed/900YXSAPOiY",
+                    "https://www.youtube.com/embed/uH-valTWR2Q",
+                    "https://www.youtube.com/embed/oe4ndNFRfxs"                 
+                ];
+                
             let randomVideo = videoLink[Math.floor(Math.random()*videoLink.length)];
             document.getElementById("videoFrame").src = randomVideo;
         }

@@ -1,4 +1,4 @@
-//#region Loading Shop and Balance Notes ---------------------------------------------
+//#region Loading Shop and Balance Notes
 function readTextFile(file) {
     let connection = new XMLHttpRequest();
     connection.open("GET", file, false);
@@ -64,7 +64,7 @@ function openHistory() {
 }
 //#endregion
 
-//#region Loading Nav ---------------------------------------------
+//#region Loading Nav
 
 function collapseNav() {
     let nav = document.getElementById("myNavBar");
@@ -141,22 +141,21 @@ function ProcessExcel(data) {
 
     let currentCycleDir = "desc";
 
-    let sortWithFixedCycle = function(e, column) {
+    let sortWithFixedCycle = function (e, column) {
         let dir = "desc";
-        table.getSorters().forEach(function(sort){
-            if (column.getField() === sort.column.getField())
-            {
+        table.getSorters().forEach(function (sort) {
+            if (column.getField() === sort.column.getField()) {
                 dir = sort.dir;
             }
         });
 
         table.setSort([
-            {column: column, dir: dir},
-            {column:"cycle", dir: currentCycleDir },
+            { column: column, dir: dir },
+            { column: "cycle", dir: currentCycleDir },
         ])
     }
 
-    let changeCycleDir = function(e, column) {
+    let changeCycleDir = function (e, column) {
         currentCycleDir = table.getSorters()[0].dir;
     }
 
@@ -166,14 +165,14 @@ function ProcessExcel(data) {
         responsiveLayout: "hide",
         autoResize: true,
 
-        initialSort:[
-            {column:"time", dir:"asc"},
-            {column:"cycle", dir: currentCycleDir},
+        initialSort: [
+            { column: "time", dir: "asc" },
+            { column: "cycle", dir: currentCycleDir },
         ],
 
         groupBy: ["cycle"],
-        groupHeader: function(value, count){
-            return "Cycle " + value + "<span style='color:#2196c4'; margin-left:10px;'>("+  + count + " runs)</span>";
+        groupHeader: function (value, count) {
+            return "Cycle " + value + "<span style='color:#2196c4'; margin-left:10px;'>(" + + count + " runs)</span>";
         },
 
         columnDefaults: {
@@ -187,24 +186,25 @@ function ProcessExcel(data) {
             { title: "Total Time", field: "time", headerClick: sortWithFixedCycle, headerSort: true },
             { title: "Cycle", field: "cycle", headerClick: changeCycleDir, headerSort: true },
             { title: "Name", field: "playerName", headerClick: sortWithFixedCycle, headerSort: true, formatter: "textarea" },
-            { title: "Video", field: "video",
+            {
+                title: "Video", field: "video",
                 formatter: buttonFormatter, cellClick: function (e, cell) {
                     let Btn = document.createElement('Button');
                     Btn.id = "video-link-button";
                     if (cell.getValue() === "No Link") {
                         Btn.onclick = alert("This video is not available anymore :( ");
                     }
-                    else{
+                    else {
                         Btn.onclick = window.open(cell.getValue());
                     }
                 }
             },
             { title: "Team 1", field: "team1", widthGrow: 2, formatter: imageFormatter },
-            { title: "Team 2", field: "team2", widthGrow: 2, formatter: imageFormatter},
+            { title: "Team 2", field: "team2", widthGrow: 2, formatter: imageFormatter },
         ],
         data: fullData,
     });
-    
+
     table.on("tableBuilt", () => {
         table.setPage(2);
     });
@@ -218,7 +218,234 @@ function loadPictures(imageName) {
 
 //#endregion
 
+//#region Loading Team Builder
 
+function updateTotalCost() {
+    var totalCost = 0;
+    $(".cost").each(function () {
+        var cost = parseInt($(this).attr("data-cost"));
+        console.log(cost);
+        if (!isNaN(cost)) {
+            $(this).text("Cost: " + cost);
+            totalCost += cost;
+        }
+    });
+
+    //Check Bennett + Xiangling Combo:
+    if (characterList.includes("Bennett") && characterList.includes("Xiangling"))
+    {
+        totalCost += 2;
+    }
+
+
+    if (!isNaN(totalCost)) {
+        $('#total-cost').text('Total Cost: ' + totalCost);
+        if (totalCost > totalBudget)
+            $("#over-budget").show();
+        else $("#over-budget").hide();
+        /*
+        if (current5Stars > max5Stars)
+            $("#over-5star").show();
+        else $("#over-5star").hide();
+        */
+    } else {
+        $('#total-cost').text('');
+    }
+}
+
+function readCSVFile(file) {
+    let connection = new XMLHttpRequest();
+    connection.open("GET", file, false);
+    connection.onreadystatechange = function () {
+        if (connection.readyState === 4) {
+            if (connection.status === 200 || connection.status == 0) {
+                let allText = connection.responseText;
+                let lines = allText.split('\n');
+                for (let line = 0; line < lines.length; line++) {
+                    let values = lines[line].split(',');
+                    let key = values[0];
+                    let value = values.slice(1);
+                    characterCostMap[key] = value;
+                }
+            }
+        }
+    }
+    connection.send(null);
+    connection.close();
+}
+
+function loadCharacterCostsFromCSV() {
+    readCSVFile('characterCosts.csv');
+}
+
+function loadPortraits() {
+    $.each(characterCostMap, function (name, details) {
+        var characterName = name;
+        var characterImage = "/ProjectWB/Images/Characters/" + characterName + ".png";
+        var characterElement = details[0];
+        var characterRarity = details[1];
+        var characterWeapon = details[2];
+        var characterCost = details[3];
+
+        $("#characterpicker").append(`
+    <div class="character" style="display: inline-block; position: relative; min-width: 64px; min-height: 64px;">
+      <img src="${characterImage}" alt="${characterName}" data-rar="${characterRarity}" data-ele="${characterElement}" data-weap="${characterWeapon}" style="width: 64px; height: 90px;">
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+        <p style="color: white; font-size: 36px; text-shadow: 2px 2px 2px black;position: absolute; top: 0; left: 0;">${characterCost}</p>
+      </div>
+    </div>
+  `);
+    });
+}
+function fillEmptySlots() {
+    $(".character-selected").each(function () {
+        $(this).find('img').attr('src', '/ProjectWB/Images/Characters/Unknown.png');
+        $(this).find('img').attr('alt', '');
+        $(this).find('p').attr('data-cost', 0);
+    });
+}
+
+$(document).ready(function () {
+    //readCSVFile('characterCosts.csv');
+    //since I can't load CSV files in jsfiddle
+    $("#character1").addClass("selected").css("box-shadow", "0 0 10px 5px blue");
+    $(".character-selected").click(function () {
+        $(".character-selected").removeClass("selected").css("box-shadow", "");
+        $(this).addClass("selected").css("box-shadow", "0 0 10px 5px blue");
+        selectedCharacter = $(this).attr("id");
+        updateTotalCost();
+    });
+
+    $('.character').click(function () {
+        var characterImgSrc = $(this).find('img').attr('src');
+        var characterImgAlt = $(this).find('img').attr('alt');
+        var characterRarity = $(this).find('img').attr('data-rar');
+        var characterCost = $(this).find('p').text();
+
+        $("#" + selectedCharacter).find('img').attr('src', characterImgSrc);
+        $("#" + selectedCharacter).find('img').attr('alt', characterImgAlt);
+        $("#" + selectedCharacter).find('.cost').attr("data-cost", characterCost);
+        $("#" + selectedCharacter).find('.cost').attr("data-rar", characterRarity);
+
+        characterList.push($(this).find('img').attr('alt'));
+        console.log(characterList);
+
+        /*
+        if (characterRarity == 5)
+            current5Stars++;
+            */
+
+        updateTotalCost();
+        selectedCharacterID = parseInt(selectedCharacter.slice(-1));
+        if (selectedCharacterID == 8)
+            selectedCharacterID = 1;
+        else
+            selectedCharacterID++;
+        selectedCharacter = "character" + selectedCharacterID;
+        $("#" + selectedCharacter).click();
+    });
+
+    $('.close').click(function () {
+        let parentDiv = $(this).closest('.character-selected');
+
+        let index = characterList.indexOf(parentDiv.find('img').attr('alt'));
+        if (index > -1) {
+            characterList.splice(index, 1);
+        }
+
+        parentDiv.find('img').attr('src', '/ProjectWB/Images/Characters/Unknown.png');
+        parentDiv.find('img').attr('alt', '');
+        parentDiv.find('p').attr('data-cost', 0);
+
+        console.log(characterList);
+
+        /*
+        if (parentDiv.find('p').attr('data-rar') == 5)
+            current5Stars--;
+         */
+
+        updateTotalCost();
+    });
+
+    $('#close-all').click(function () {
+        fillEmptySlots();
+        //current5Stars = 0;
+        characterList.length = 0;
+        updateTotalCost();
+    });
+});
+
+function loadManualCharacterCosts() {
+    characterCostMap = { //Character: Element, Rarity, Weapon, Cost 
+        "Heizou": ["Anemo", 4, "Catalyst", 4],
+        "Sucrose": ["Anemo", 4, "Catalyst", 8],
+        "Faruzan": ["Anemo", 4, "Bow", 4],
+        "Sayu": ["Anemo", 4, "Claymore", 4],
+        "Kazuha": ["Anemo", 5, "Sword", 12],
+        "Venti": ["Anemo", 5, "Bow", 10],
+        "Jean": ["Anemo", 5, "Sword", 4],
+        "Wanderer": ["Anemo", 5, "Catalyst", 4],
+        "Xiao": ["Anemo", 5, "Polearm", 4],
+        "TravelerAnemo": ["Anemo", 5, "Sword", 4],
+        "Diona": ["Cryo", 4, "Bow", 4],
+        "Kaeya": ["Cryo", 4, "Sword", 4],
+        "Layla": ["Cryo", 4, "Sword", 2],
+        "Rosaria": ["Cryo", 4, "Polearm", 4],
+        "Chongyun": ["Cryo", 4, "Claymore", 2],
+        "Ayaka": ["Cryo", 5, "Sword", 10],
+        "Eula": ["Cryo", 5, "Claymore", 4],
+        "Ganyu": ["Cryo", 5, "Bow", 10],
+        "Shenhe": ["Cryo", 5, "Polearm", 6],
+        "Aloy": ["Cryo", 5, "Bow", 0],
+        "Qiqi": ["Cryo", 5, "Sword", 0],
+        "Yaoyao": ["Dendro", 4, "Polearm", 4],
+        "Alhaitham": ["Dendro", 5, "Sword", 8],
+        "Nahida": ["Dendro", 5, "Catalyst", 10],
+        "TravelerDendro": ["Dendro", 5, "Sword", 4],
+        "Tighnari": ["Dendro", 5, "Bow", 6],
+        "Collei": ["Dendro", 4, "Bow", 4],
+        "Fischl": ["Electro", 4, "Bow", 8],
+        "Beidou": ["Electro", 4, "Claymore", 4],
+        "Sara": ["Electro", 4, "Bow", 6],
+        "Kuki": ["Electro", 4, "Sword", 6],
+        "Razor": ["Electro", 4, "Claymore", 0],
+        "Dori": ["Electro", 4, "Claymore", 0],
+        "Lisa": ["Electro", 4, "Catalyst", 4],
+        "Raiden": ["Electro", 5, "Polearm", 12],
+        "Yae": ["Electro", 5, "Catalyst", 8],
+        "Cyno": ["Electro", 5, "Polearm", 4],
+        "TravelerElectro": ["Electro", 5, "Sword", 0],
+        "Keqing": ["Electro", 5, "Sword", 6],
+        "Gorou": ["Geo", 4, "Bow", 4],
+        "Ningguang": ["Geo", 4, "Catalyst", 0],
+        "Noelle": ["Geo", 4, "Claymore", 0],
+        "Yunjin": ["Geo", 4, "Polearm", 2],
+        "Itto": ["Geo", 5, "Claymore", 6],
+        "Zhongli": ["Geo", 5, "Polearm", 6],
+        "Albedo": ["Geo", 5, "Sword", 6],
+        "TravelerGeo": ["Geo", 5, "Sword", 0],
+        "Xingqiu": ["Hydro", 4, "Sword", 12],
+        "Barbara": ["Hydro", 4, "Catalyst", 2],
+        "Candace": ["Hydro", 4, "Polearm", 0],
+        "Kokomi": ["Hydro", 5, "Catalyst", 8],
+        "Yelan": ["Hydro", 5, "Bow", 12],
+        "Ayato": ["Hydro", 5, "Sword", 8],
+        "Tartaglia": ["Hydro", 5, "Bow", 8],
+        "Mona": ["Hydro", 5, "Catalyst", 6],
+        "Nilou": ["Hydro", 5, "Sword", 8],
+        "Bennett": ["Pyro", 4, "Sword", 10],
+        "Xiangling": ["Pyro", 4, "Polearm", 8],
+        "Yanfei": ["Pyro", 4, "Catalyst", 4],
+        "Thoma": ["Pyro", 4, "Polearm", 4],
+        "Amber": ["Pyro", 4, "Bow", 0],
+        "Xinyan": ["Pyro", 4, "Claymore", 0],
+        "HuTao": ["Pyro", 5, "Polearm", 8],
+        "Diluc": ["Pyro", 5, "Claymore", 4],
+        "Yoimiya": ["Pyro", 5, "Bow", 2],
+        "Klee": ["Pyro", 5, "Catalyst", 2]
+    }
+}
+//#endregion
 
 /*
 let navbar = document.getElementById("myNavBar");

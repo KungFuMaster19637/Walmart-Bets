@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <title>Walmart Bets</title>
+    <link rel="icon" href="/ProjectWB/Images/Dice.png">
+    <link rel="stylesheet" href="WalmartBets.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="/ProjectWB/WalmartBets.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="capsule">
+            <div id="nav-placeholder"></div>
+            <script>
+                $(function () {
+                    $("#nav-placeholder").load("Repeat/navheader.html");
+                });
+            </script>
+            <div class="teambuilder-container">
+                <h1>Walmart Bets Team Builder</h1>
+                <div class="total-cost-bar">
+                    <h2 id="total-cost"></span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <h2 id="over-budget" style="color:red;display:none">
+                            You are over budget!
+                        </h2>
+                </div>
+                <div class="total-cost-bar">
+                    <span id="close-all"> Click here to reset &times;</span>
+                </div>
+                <!--
+      <h4 id="over-5star" style="color:red;display:none">
+          You have more than 2 5 stars!
+        </h4>
+    -->
+            </div>
+            <div class="characters-container">
+                <div class="team">
+                    <div class="character-selected" id="character1">
+                        <img src="">
+                        <p class="cost" data-cost="0"></p>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="character-selected" id="character2">
+                        <img src="">
+                        <p class="cost" data-cost="0"></p>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="character-selected" id="character3">
+                        <img src="">
+                        <p class="cost" data-cost="0"></p>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="character-selected" id="character4">
+                        <img src="">
+                        <p class="cost" data-cost="0"></p>
+                        <span class="close">&times;</span>
+                    </div>
+                </div>
+                <div class="team">
+                    <div class="character-selected" id="character5">
+                        <img src="">
+                        <p class="cost" data-cost="0"></p>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="character-selected" id="character6">
+                        <img src="">
+                        <p class="cost" data-cost="0"></p>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="character-selected" id="character7">
+                        <img src="">
+                        <p class="cost" data-cost="0"></p>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="character-selected" id="character8">
+                        <img src="">
+                        <p class="cost" data-cost="0"></p>
+                        <span class="close">&times;</span>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div id="characterpicker">
+            </div>
+            <div id="footer"></div>
+            <script>
+                $(function () {
+                    $("#footer").load("Repeat/footer.html");
+                });
+            </script>
+        </div>
+    </main>
+    <script>
+        let selectedCharacter = $("#character1").attr("id");
+        const totalBudget = 64;
+        //const max5Stars = 2;
+        //let current5Stars = 0;
+        let characterCostMap = {};
+        let characterList = [];
+        fillEmptySlots();
+        loadManualCharacterCosts();
+        loadPortraits();
+        updateTotalCost();
+    </script>
+</body>
+
+</html>
