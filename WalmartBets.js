@@ -224,7 +224,6 @@ function updateTotalCost() {
     var totalCost = 0;
     $(".cost").each(function () {
         var cost = parseInt($(this).attr("data-cost"));
-        console.log(cost);
         if (!isNaN(cost)) {
             $(this).text("Cost: " + cost);
             totalCost += cost;
@@ -243,6 +242,9 @@ function updateTotalCost() {
         if (totalCost > totalBudget)
             $("#over-budget").show();
         else $("#over-budget").hide();
+        $('.character .img').filter(function() {
+            return $(this).attr("data-cost") > (totalBudget-totalCost);
+          }).addClass('disabled');
         /*
         if (current5Stars > max5Stars)
             $("#over-5star").show();
@@ -317,18 +319,26 @@ $(document).ready(function () {
     });
 
     $('.character').click(function () {
+        var clickedChar = $(this).find('img');
+        if (clickedChar.hasClass('disabled')) {
+          return false;
+        }
         var characterImgSrc = $(this).find('img').attr('src');
         var characterImgAlt = $(this).find('img').attr('alt');
         var characterRarity = $(this).find('img').attr('data-rar');
         var characterCost = $(this).find('p').text();
+        clickedChar.addClass("disabled").addClass("selected");
+        if (characterImgAlt.startsWith("Traveler")){
+            $('.character img[alt^=Traveler]').addClass('disabled');
+        } 
 
+        $("#" + selectedCharacter + " .close").click();
         $("#" + selectedCharacter).find('img').attr('src', characterImgSrc);
         $("#" + selectedCharacter).find('img').attr('alt', characterImgAlt);
         $("#" + selectedCharacter).find('.cost').attr("data-cost", characterCost);
         $("#" + selectedCharacter).find('.cost').attr("data-rar", characterRarity);
 
         characterList.push($(this).find('img').attr('alt'));
-        console.log(characterList);
 
         /*
         if (characterRarity == 5)
@@ -347,7 +357,8 @@ $(document).ready(function () {
 
     $('.close').click(function () {
         let parentDiv = $(this).closest('.character-selected');
-
+        let clearChar = parentDiv.find('img').attr('alt');
+        if (clearChar && clearChar.startsWith("Traveler")) clearChar = "Traveler";
         let index = characterList.indexOf(parentDiv.find('img').attr('alt'));
         if (index > -1) {
             characterList.splice(index, 1);
@@ -356,14 +367,11 @@ $(document).ready(function () {
         parentDiv.find('img').attr('src', '/ProjectWB/Images/Characters/Unknown.png');
         parentDiv.find('img').attr('alt', '');
         parentDiv.find('p').attr('data-cost', 0);
-
-        console.log(characterList);
-
         /*
         if (parentDiv.find('p').attr('data-rar') == 5)
             current5Stars--;
          */
-
+        $('.character img[alt^='+clearChar+']').removeClass('disabled');
         updateTotalCost();
     });
 
@@ -371,6 +379,7 @@ $(document).ready(function () {
         fillEmptySlots();
         //current5Stars = 0;
         characterList.length = 0;
+        $('.character img').removeClass('disabled').removeClass('selected');
         updateTotalCost();
     });
 });

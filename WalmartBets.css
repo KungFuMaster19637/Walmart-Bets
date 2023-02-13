@@ -506,10 +506,21 @@ Sticky Nav
     align-self: center;
 }
 
+@media (max-width: 767px) {
+    .character-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .team {
+      width: 100%;
+    }
+  }
+
 .total-cost-bar {
     margin-left: 2%;
 }
-.characters-container {
+.character-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -524,9 +535,13 @@ Sticky Nav
     justify-content: space-between;
 }
 
+#characterpicker {
+    text-align: center;
+}
+
 .character-selected {
     width: 25%;
-    height: 200px;
+    height: auto;
     background-color: lightgray;
     display: flex;
     flex-wrap: wrap;
@@ -543,11 +558,19 @@ Sticky Nav
 
 .character-selected p.cost {
     position: absolute;
+    width: fit-content;
+    font-size: 1.6vh;
     bottom: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 5px 10px;
+}
+
+.character .disabled {
+    pointer-events: none;
+    filter: brightness(30%);
+    
 }
 
 .close {
