@@ -575,12 +575,14 @@ Sticky Nav
 
 .close {
     position: absolute;
+    font-weight: bold;
     font-size: 150%;
     top: 5%;
     right: 5%;
 }
 
 .close, #close-all {
+    color: rgb(210, 74, 74);
     cursor: pointer;
 }
 
