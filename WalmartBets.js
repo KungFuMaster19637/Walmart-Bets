@@ -451,11 +451,27 @@ function loadManualCharacterCosts() {
         "HuTao": ["Pyro", 5, "Polearm", 8],
         "Diluc": ["Pyro", 5, "Claymore", 4],
         "Yoimiya": ["Pyro", 5, "Bow", 4],
-        "Klee": ["Pyro", 5, "Catalyst", 2]
+        "Klee": ["Pyro", 5, "Catalyst", 2],
+        "Dehya": ["Pyro", 5, "Claymore", 0]
     }
 }
 //#endregion
 
+function calculateTime(){
+    let total = 0;
+    for (const minutesData of document.querySelectorAll(".minutes")){
+        total += Number(minutesData.value * 60);
+    }
+    for (const secondsData of document.querySelectorAll(".seconds")){
+        total += Number(secondsData.value);
+    }
+    total -= document.getElementById("minutes-bonus").value * 60 + document.getElementById("seconds-bonus").value;
+    let minutes = total / 60;
+    if (minutes < 10) minutes = "0" + minutes;
+    let seconds = total % 60;
+    if (seconds < 10) seconds = "0" + seconds;
+    document.getElementById("total-time").innerText = `${Math.floor(minutes)}:${(seconds)}`;
+}
 /*
 let navbar = document.getElementById("myNavBar");
 let sticky = navbar.offsetTop;

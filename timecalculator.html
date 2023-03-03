@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+  <title>Walmart Bets</title>
+  <link rel="icon" href="/ProjectWB/Images/Dice.png">
+  <link rel="stylesheet" href="WalmartBets.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="/ProjectWB/WalmartBets.js"></script>
+</head>
+
+<body>
+  <main>
+    <div class="capsule">
+      <div id="nav-placeholder"></div>
+      <script>
+        $(function () {
+          $("#nav-placeholder").load("Repeat/navheader.html");
+        });
+      </script>
+      <div class="timecalculator-container">
+        <div class="timecalculator-wrapper">
+            <table id="timecalculator-body">
+              <th>
+                <td>Minutes</td>
+                <td>Seconds</td>
+              </th>
+              <tr>
+                <td>Chamber 1</td>
+                <td><input class="minutes" type="number"></td> 
+                <td><input class="seconds" type="number"></td>
+              </tr>
+              <tr>
+                <td>Chamber 2</td>
+                <td><input class="minutes" type="number"></td>
+                <td><input class="seconds" type="number"></td>
+              </tr>
+              <tr>
+                <td>Chamber 3</td>
+                <td><input class="minutes" type="number"></td>
+                <td><input class="seconds" type="number"></td>
+              </tr>
+              <tr>
+                <td>Penalty</td>
+                <td><input class="minutes" type="number"></td>
+                <td><input class="seconds" type="number"></td>
+              </tr>
+              <tr>
+                <td>Bonus</td>
+                <td><input id="minutes-bonus" type="number"></td>
+                <td><input id="seconds-bonus" type="number"></td>
+              </tr>
+              <tr>
+                <td><button id="calculate-time" onclick="calculateTime()">Calculate</button></td>
+                <td colspan="2"><span id="total-time"></span></td>
+              </tr>
+            </table>    
+        </div>
+      </div>
+      <div id="footer"></div>
+      <script>
+        $(function () {
+          $("#footer").load("Repeat/footer.html");
+        });
+      </script>
+    </div>
+  </main>
+</body>
+
+</html>

@@ -586,4 +586,58 @@ Sticky Nav
     cursor: pointer;
 }
 
+/*Time Calculator CSS ---------------------------- */
+
+.timecalculator-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url("/ProjectWB/Images/Background/AsaseShrine.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 80vh;
+    margin-bottom: 5px;
+}
+
+.timecalculator-wrapper {
+    background: rgb(0, 0, 0, 0.8);
+    margin: 20px;
+    width: 50%;
+    min-width: 400px;
+    height: 90%;
+    border-radius: 20px;
+}
+
+#timecalculator-body{
+    margin: auto;
+}
+
+#timecalculator-body td{
+    padding: 2vh;
+}
+
+#timecalculator-body td, input{
+    text-align:  center;
+}
+
+.minutes, .seconds, #minutes-bonus, #seconds-bonus {
+    max-width: 100px;
+    width: 15vw;
+}
+
+#calculate-time {
+    background-color: #2196c4;
+    font-family: 'Cunia';
+    color: #fff;
+    padding: 5%;
+}
+
+#total-time {
+    font-family: 'Cunia';
+}
+
 /* font: stencil */
