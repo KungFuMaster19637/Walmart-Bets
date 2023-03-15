@@ -40,7 +40,7 @@ function loadShop(cycle) {
 function loadCycle(cycle) {
     loadShop(cycle);
     readTextFile(`BalanceNotes/Cycle${cycle}.txt`);
-    cycle != 9 ? document.getElementById("discounts").style.display = "none" : document.getElementById("discounts").style.display = "block";
+    cycle != 10 ? document.getElementById("discounts").style.display = "none" : document.getElementById("discounts").style.display = "block";
 }
 
 function loadBalanceHistory(cycle) {
@@ -391,12 +391,12 @@ function loadManualCharacterCosts() {
         "Faruzan": ["Anemo", 4, "Bow", 6],
         "Sayu": ["Anemo", 4, "Claymore", 4],
         "Kazuha": ["Anemo", 5, "Sword", 12],
-        "Venti": ["Anemo", 5, "Bow", 6],
+        "Venti": ["Anemo", 5, "Bow", 8],
         "Jean": ["Anemo", 5, "Sword", 4],
         "Wanderer": ["Anemo", 5, "Catalyst", 6],
         "Xiao": ["Anemo", 5, "Polearm", 6],
         "TravelerAnemo": ["Anemo", 5, "Sword", 2],
-        "Diona": ["Cryo", 4, "Bow", 4],
+        "Diona": ["Cryo", 4, "Bow", 2],
         "Kaeya": ["Cryo", 4, "Sword", 4],
         "Layla": ["Cryo", 4, "Sword", 2],
         "Rosaria": ["Cryo", 4, "Polearm", 4],
@@ -409,7 +409,7 @@ function loadManualCharacterCosts() {
         "Qiqi": ["Cryo", 5, "Sword", 0],
         "Yaoyao": ["Dendro", 4, "Polearm", 4],
         "Alhaitham": ["Dendro", 5, "Sword", 10],
-        "Nahida": ["Dendro", 5, "Catalyst", 10],
+        "Nahida": ["Dendro", 5, "Catalyst", 12],
         "TravelerDendro": ["Dendro", 5, "Sword", 6],
         "Tighnari": ["Dendro", 5, "Bow", 8],
         "Collei": ["Dendro", 4, "Bow", 2],
@@ -441,9 +441,9 @@ function loadManualCharacterCosts() {
         "Ayato": ["Hydro", 5, "Sword", 8],
         "Tartaglia": ["Hydro", 5, "Bow", 8],
         "Mona": ["Hydro", 5, "Catalyst", 4],
-        "Nilou": ["Hydro", 5, "Sword", 10],
+        "Nilou": ["Hydro", 5, "Sword", 8],
         "Bennett": ["Pyro", 4, "Sword", 12],
-        "Xiangling": ["Pyro", 4, "Polearm", 6],
+        "Xiangling": ["Pyro", 4, "Polearm", 8],
         "Yanfei": ["Pyro", 4, "Catalyst", 4],
         "Thoma": ["Pyro", 4, "Polearm", 4],
         "Amber": ["Pyro", 4, "Bow", 0],
