@@ -164,7 +164,7 @@ function ProcessExcel(data) {
         rowHeight: 80,
         responsiveLayout: "hide",
         autoResize: true,
-
+        
         initialSort: [
             { column: "time", dir: "asc" },
             { column: "cycle", dir: currentCycleDir },
@@ -184,7 +184,7 @@ function ProcessExcel(data) {
         },
         columns: [
             { title: "Total Time", field: "time", headerClick: sortWithFixedCycle, headerSort: true },
-            { title: "Cycle", field: "cycle", headerClick: changeCycleDir, headerSort: true },
+            { title: "Cycle", field: "cycle", headerClick: changeCycleDir, headerSort: true, sorter: "number"},
             { title: "Name", field: "playerName", headerClick: sortWithFixedCycle, headerSort: true, formatter: "textarea" },
             {
                 title: "Video", field: "video",
