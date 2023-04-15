@@ -1,0 +1,5 @@
+3.6 - 3.7 Cycle 11
+Budget: 64
+1. Baizhu 🆕: The second Dendro healer will release soon, and will hopefully make an impact on the meta. As he looks like a slight upgrade over Yaoyao, his cost at 6 seems fine for his first cycle.
+2. Kaveh 🆕: Another Dendro unit releases this patch, and his name is Kaveh. His main role will be a Dendro support providing buffs to the bloom reactions. As we don't know how strong he is, we usually put the 4* characters at 4 cost at their first cycle to test them out. 
+3. Xiangling/Nilou ⬆️ 1 tier: Looking at the chambers for this patch, it seems like the second half greatly favors AOE teams. Nilou is rerunning afterall and they had to market her by giving out the best possible matchups for her. Xiangling has also been overused as the premier Pyro DPS option. With another AOE focused side she might shred the competition. Nerfing them both with 1 tier should make it more balanced.
