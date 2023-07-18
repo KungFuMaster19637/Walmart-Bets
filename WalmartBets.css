@@ -1,166 +1,164 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-sizing: border-box;
-
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
-body {}
+body {
+}
 
 .capsule {
-    background-color: #1d1d1d;
-    min-height: 100vh;
-    width: 100%;
-    color: #fff;
-    position: relative;
+  background-color: #1d1d1d;
+  min-height: 100vh;
+  width: 100%;
+  color: #fff;
+  position: relative;
 }
 
 /* Fonts ---------------------------- */
 
 @font-face {
-    font-family: Cunia;
-    src: url(/ProjectWB/Fonts/Cunia.ttf);
+  font-family: Cunia;
+  src: url(/ProjectWB/Fonts/Cunia.ttf);
 }
 
 @font-face {
-    font-family: Roboto-Black;
-    src: url(/ProjectWB/Fonts/Roboto-Black.ttf);
+  font-family: Roboto-Black;
+  src: url(/ProjectWB/Fonts/Roboto-Black.ttf);
 }
 
 @font-face {
-    font-family: Roboto-Light;
-    src: url(/ProjectWB/Fonts/Roboto-Light.ttf);
-    font-weight: 900;
+  font-family: Roboto-Light;
+  src: url(/ProjectWB/Fonts/Roboto-Light.ttf);
+  font-weight: 900;
 }
 
 @font-face {
-    font-family: Roboto-Regular;
-    src: url(/ProjectWB/Fonts/Roboto-Regular.ttf);
-    font-weight: 900;
+  font-family: Roboto-Regular;
+  src: url(/ProjectWB/Fonts/Roboto-Regular.ttf);
+  font-weight: 900;
 }
 
 /* Nav header CSS ---------------------------- */
 
 nav {
-    display: flex;
-    align-items: center;
-    padding: 10px 5%;
+  display: flex;
+  align-items: center;
+  padding: 10px 5%;
 }
 
 .logo {
-    vertical-align: middle;
-    height: max-content;
-    width: 10%;
-    cursor: pointer;
+  vertical-align: middle;
+  height: max-content;
+  width: 10%;
+  cursor: pointer;
 }
 
 nav .navBar {
-    float: left;
-    z-index: 10;
-    display: block;
-    overflow: hidden;
-    width: 100%;
-    text-align: left;
+  float: left;
+  z-index: 10;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  text-align: left;
 }
 
 nav .navBar a {
-    font-size: 150%;
-    flex-wrap: wrap;
-    text-decoration: none;
-    color: white;
-    list-style: none;
-    margin: 0px 1.5vw;
+  font-size: 150%;
+  flex-wrap: wrap;
+  text-decoration: none;
+  color: white;
+  list-style: none;
+  margin: 0px 1.5vw;
 }
 
 nav .navBar a:hover {
-    color: #2196c4;
+  color: #2196c4;
 }
 
 nav .navBar .icon {
+  display: none;
+}
+
+@media screen and (max-width: 1050px) {
+  .navBar a:not(:first-child) {
     display: none;
+  }
+
+  .navBar a.icon {
+    float: right;
+    display: block;
+  }
 }
 
 @media screen and (max-width: 1050px) {
-    .navBar a:not(:first-child) {
-        display: none;
-    }
+  .navBar.responsive {
+    position: relative;
+  }
 
-    .navBar a.icon {
-        float: right;
-        display: block;
-    }
-}
+  .navBar.responsive .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 
-@media screen and (max-width: 1050px) {
-    .navBar.responsive {
-        position: relative;
-    }
-
-    .navBar.responsive .icon {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-
-    .navBar.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
+  .navBar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
 
 #title {
-    margin-left: 20px;
-    text-decoration: none;
-    font-family: 'Cunia';
-    font-size: 200%;
-    color: #2196c4;
+  margin-left: 20px;
+  text-decoration: none;
+  font-family: "Cunia";
+  font-size: 200%;
+  color: #2196c4;
 }
 
 .buff,
 .nerf {
-    flex-shrink: 0;
-    font-size: 3vh;
+  flex-shrink: 0;
+  font-size: 3vh;
 }
 
 .buff {
-    color: rgb(0, 255, 101);
+  color: rgb(0, 255, 101);
 }
 
 .nerf {
-    color: rgb(255, 71, 71);
+  color: rgb(255, 71, 71);
 }
 
 .scroller {
-    position: relative;
-    width: 100%;
-    height: 80px;
-    overflow: hidden;
-    background-color: rgba(48, 53, 176, 0.75);
-
+  position: relative;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  background-color: rgba(48, 53, 176, 0.75);
 }
 
 .scroller-background {
-    display: flex;
-    justify-content: center;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
 
-    -moz-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-    -moz-animation: scrolleranim 15s linear infinite;
-    -webkit-animation: scrolleranim 15s linear infinite;
-    animation: scrolleranim 15s linear infinite;
-
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -moz-animation: scrolleranim 15s linear infinite;
+  -webkit-animation: scrolleranim 15s linear infinite;
+  animation: scrolleranim 15s linear infinite;
 }
 
 .scroller-image {
-    margin-top: 10px;
-    margin-left: 15px;
-    vertical-align: middle;
-    width: auto;
-    height: 80%;
+  margin-top: 10px;
+  margin-left: 15px;
+  vertical-align: middle;
+  width: auto;
+  height: 80%;
 }
 
 /*
@@ -178,466 +176,467 @@ Sticky Nav
 */
 
 @-moz-keyframes scrolleranim {
-    0% {
-        -moz-transform: translateX(100%);
-    }
+  0% {
+    -moz-transform: translateX(100%);
+  }
 
-    100% {
-        -moz-transform: translateX(-100%);
-    }
+  100% {
+    -moz-transform: translateX(-100%);
+  }
 }
 
 @-webkit-keyframes scrolleranim {
-    0% {
-        -webkit-transform: translateX(100%);
-    }
+  0% {
+    -webkit-transform: translateX(100%);
+  }
 
-    100% {
-        -webkit-transform: translateX(-100%);
-    }
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
 }
 
 @keyframes scrolleranim {
-    0% {
-        transform: translateX(100%);
-    }
+  0% {
+    transform: translateX(100%);
+  }
 
-    100% {
-        transform: translateX(-100%);
-    }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 #footer {
-    background-color: black;
-    padding: 2%;
+  background-color: black;
+  padding: 2%;
 }
 
 #footer p {
-    font-size: 14px;
-    text-align: center;
+  font-size: 14px;
+  text-align: center;
 }
 
 /* Index CSS ---------------------------- */
 
 .indexcontainer {
-    margin: 0%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin: 0%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .indexcontainer a {
-    position: absolute;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #1d1d1d;
-    border-radius: 25px;
-    padding: 2%;
-    color: #2196c4;
-    font-family: "Cunia";
+  position: absolute;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1d1d1d;
+  border-radius: 25px;
+  padding: 2%;
+  color: #2196c4;
+  font-family: "Cunia";
 }
 
 .index-video {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .video-popup {
-    position: relative;
-    background: #1d1d1d;
-    padding: 20px;
-    max-width: 1000px;
-    border-radius: 10px;
-    margin: 20px auto;
+  position: relative;
+  background: #1d1d1d;
+  padding: 20px;
+  max-width: 1000px;
+  border-radius: 10px;
+  margin: 20px auto;
 }
 
 .video-popup-link {
-    background-color: rgb(183, 89, 255);
-    color: #efefef;
-    font-family: Roboto-light;
-    text-decoration: none;
-    border-radius: 10px;
-    margin-left: 50px;
-    padding: 10px;
+  background-color: rgb(183, 89, 255);
+  color: #efefef;
+  font-family: Roboto-light;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-left: 50px;
+  padding: 10px;
 }
 
 #random-video {
-    width: 75%;
-    margin: 0 auto;
+  width: 75%;
+  margin: 0 auto;
 }
 
 #random-video iframe {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 /* Rules CSS ---------------------------- */
 
 .rules-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: url("/ProjectWB/Images/Background/Spiralabyss.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    margin-bottom: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: url("/ProjectWB/Images/Background/Spiralabyss.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin-bottom: 5px;
 }
 
 .rules-wrapper {
-    background: rgb(0, 0, 0, 0.8);
-    margin: 20px;
-    width: 50%;
-    min-width: 70%;
-    height: 90%;
-    border-radius: 20px;
+  background: rgb(0, 0, 0, 0.8);
+  margin: 20px;
+  width: 50%;
+  min-width: 70%;
+  height: 90%;
+  border-radius: 20px;
 }
 
 .howtoplay-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: url("/ProjectWB/Images/Background/SeiraiIsland.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: url("/ProjectWB/Images/Background/SeiraiIsland.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .howtoplay-wrapper {
-    background: rgb(0, 0, 0, 0.8);
-    margin: 20px;
-    width: 50%;
-    min-width: 70%;
-    height: 100%;
-    border-radius: 20px;
+  background: rgb(0, 0, 0, 0.8);
+  margin: 20px;
+  width: 50%;
+  min-width: 70%;
+  height: 100%;
+  border-radius: 20px;
 }
 
 .rules-wrapper h1,
 .howtoplay-wrapper h1 {
-    margin: 20px;
-    text-align: center;
-    color: white;
-    font-family: 'Roboto-Black';
+  margin: 20px;
+  text-align: center;
+  color: white;
+  font-family: "Roboto-Black";
 }
 
 .rules-wrapper p,
 .howtoplay-wrapper p {
-    margin: 2% 5%;
-    color: white;
-    font-size: 20px;
-    font-family: 'Roboto-Regular';
+  margin: 2% 5%;
+  color: white;
+  font-size: 20px;
+  font-family: "Roboto-Regular";
 }
 
 .rules-background,
 .howtoplay-background {
-    max-height: 100%;
-    max-width: 100%;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .shop-link {
-    text-decoration: none;
-    color: blue;
-    font-weight: bold;
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
 }
 
-
 #exampleVideo {
-    height: 10%;
-    width: 70%;
-    margin: 0 auto;
-    margin-bottom: 20px;
-
+  height: 10%;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 #exampleVideo iframe {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 /*Shop CSS ----------------------------  */
 
 .shop-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: black
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
 }
 
 .shop-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .shop-container h1 {
-    font-size: 4vh;
-    color: white;
-    align-self: center;
-    margin: 10px;
+  font-size: 4vh;
+  color: white;
+  align-self: center;
+  margin: 10px;
 }
 
 .shop-image {
-    height: auto;
-    width: 60%;
+  height: auto;
+  width: 60%;
 }
 
 .shop-rules {
-    background-color: #1d1d1d;
-    border-radius: 15px;
-    height: auto;
-    width: 30%;
+  background-color: #1d1d1d;
+  border-radius: 15px;
+  height: auto;
+  width: 30%;
+  margin: 2%;
 }
 
 .shop-rules h1 {
-    font-size: 4vh;
+  font-size: 4vh;
 }
 
 .shop-rules p {
-    font-size: 3vh;
-    margin: 10px;
+  font-size: 3vh;
+  margin: 10px;
 }
 
 .balancenotes-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: url("/ProjectWB/Images/Background/Constellation.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: url("/ProjectWB/Images/Background/Constellation.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .balance-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 #balance-text {
-    background: rgba(48, 53, 176, 0.75);
-    margin: 20px;
-    width: 50%;
-    min-width: 70%;
-    height: fit-content;
-    border-radius: 20px;
+  background: rgba(48, 53, 176, 0.75);
+  margin: 20px;
+  width: 50%;
+  min-width: 70%;
+  height: fit-content;
+  border-radius: 20px;
 }
 
-
 #balance-text h1 {
-    text-align: center;
-    font-family: 'Roboto-Black';
+  text-align: center;
+  font-family: "Roboto-Black";
 }
 
 #balance-text p {
-    font-family: 'Roboto-Light';
-    font-size: 20px;
-    margin: 10px;
+  font-family: "Roboto-Light";
+  font-size: 20px;
+  margin: 10px;
 }
 
 #balance-list {
-    margin: 20px;
-    display: block;
-    overflow: auto;
-    list-style: none;
+  margin: 20px;
+  display: block;
+  overflow: auto;
+  list-style: none;
 }
 
 #balance-list a.icon {
-    float: left;
+  float: left;
 }
 
 #balance-list li {
-    float: left;
-    text-align: center;
-    width: 10vw;
-    background: rgba(48, 53, 176, 0.75);
-    text-decoration: none;
-    cursor: pointer;
+  float: left;
+  text-align: center;
+  width: 10vw;
+  background: rgba(48, 53, 176, 0.75);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /*Leaderboard CSS ---------------------------- */
 
 .leaderboard-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #leaderboard-table {
-    width: 92%;
-    background-color: #1d1d1d;
+  width: 92%;
+  background-color: #1d1d1d;
 }
 
 #leaderboard-table .tabulator-row .tabulator-cell {
-    font-size: 2vh;
-    color: white;
+  font-size: 2vh;
+  color: white;
 }
 
 .leaderboard-character-image {
-    margin: 0.5%;
-    max-height: 80%;
-    max-width: 25%;
+  margin: 0.5%;
+  max-height: 80%;
+  max-width: 25%;
 }
 
 .video-run-link {
-    color: #efefef;
+  color: #efefef;
 }
 
 /*Team Builder CSS ---------------------------- */
 .teambuilder-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3vh;
 }
 
 .teambuilder-container h1 {
-    align-self: center;
+  align-self: center;
 }
 
 @media (max-width: 767px) {
-    .character-container {
-      display: flex;
-      flex-wrap: wrap;
-    }
-  
-    .team {
-      width: 100%;
-    }
-  }
-
-.total-cost-bar {
-    margin-left: 2%;
-}
-.character-container {
+  .character-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 2%;
+  }
+
+  .team {
+    width: 100%;
+  }
+}
+
+.total-cost-bar {
+  margin-left: 2%;
+}
+.character-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2%;
 }
 
 .team {
-    width: 45%;
-    background-color: lightgray;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  width: 45%;
+  background-color: lightgray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #characterpicker {
-    text-align: center;
+  text-align: center;
 }
 
 .character-selected {
-    width: 25%;
-    height: auto;
-    background-color: lightgray;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
+  width: 25%;
+  height: auto;
+  background-color: lightgray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 
 .character-selected img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .character-selected p.cost {
-    position: absolute;
-    width: fit-content;
-    font-size: 1.6vh;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 5px 10px;
+  position: absolute;
+  width: fit-content;
+  font-size: 1.6vh;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
 }
 
 .character .disabled {
-    pointer-events: none;
-    filter: brightness(30%);
-    
+  pointer-events: none;
+  filter: brightness(30%);
 }
 
 .close {
-    position: absolute;
-    font-weight: bold;
-    font-size: 150%;
-    top: 5%;
-    right: 5%;
+  position: absolute;
+  font-weight: bold;
+  font-size: 150%;
+  top: 5%;
+  right: 5%;
 }
 
-.close, #close-all {
-    color: rgb(210, 74, 74);
-    cursor: pointer;
+.close,
+#close-all {
+  color: rgb(210, 74, 74);
+  cursor: pointer;
 }
 
 /*Time Calculator CSS ---------------------------- */
 
 .timecalculator-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: url("/ProjectWB/Images/Background/AsaseShrine.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    min-height: 80vh;
-    margin-bottom: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: url("/ProjectWB/Images/Background/AsaseShrine.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 80vh;
+  margin-bottom: 5px;
 }
 
 .timecalculator-wrapper {
-    background: rgb(0, 0, 0, 0.8);
-    margin: 20px;
-    width: 50%;
-    min-width: 400px;
-    height: 90%;
-    border-radius: 20px;
+  background: rgb(0, 0, 0, 0.8);
+  margin: 20px;
+  width: 50%;
+  min-width: 400px;
+  height: 90%;
+  border-radius: 20px;
 }
 
-#timecalculator-body{
-    margin: auto;
+#timecalculator-body {
+  margin: auto;
 }
 
-#timecalculator-body td{
-    padding: 2vh;
+#timecalculator-body td {
+  padding: 2vh;
 }
 
-#timecalculator-body td, input{
-    text-align:  center;
+#timecalculator-body td,
+input {
+  text-align: center;
 }
 
-.minutes, .seconds, #minutes-bonus, #seconds-bonus {
-    max-width: 100px;
-    width: 15vw;
+.minutes,
+.seconds,
+#minutes-bonus,
+#seconds-bonus {
+  max-width: 100px;
+  width: 15vw;
 }
 
 #calculate-time {
-    background-color: #2196c4;
-    font-family: 'Cunia';
-    color: #fff;
-    padding: 5%;
+  background-color: #2196c4;
+  font-family: "Cunia";
+  color: #fff;
+  padding: 5%;
 }
 
 #total-time {
-    font-family: 'Cunia';
+  font-family: "Cunia";
 }
 
 /* font: stencil */

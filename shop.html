@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
     <title>Walmart Bets</title>
-    <link rel="icon" href="/ProjectWB/Images/Background/Dice.png">
-    <link rel="stylesheet" href="WalmartBets.css">
+    <link rel="icon" href="/ProjectWB/Images/Background/Dice.png" />
+    <link rel="stylesheet" href="WalmartBets.css" />
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="/ProjectWB/WalmartBets.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <div class="capsule">
-            <div id="nav-placeholder"></div>
-            <script>
-                $(function () {
-                    $("#nav-placeholder").load("Repeat/navheader.html");
-                });
-            </script>
-            <div class="balancenotes-container">
-                <div class="balance-history">
-                    <div class="balance-row">
-                        <ul id="balance-list">
-                        </ul>
-                    </div>
-                </div>
-                <div id="balance-text">
-                </div>
+      <div class="capsule">
+        <div id="nav-placeholder"></div>
+        <script>
+          $(function () {
+            $("#nav-placeholder").load("Repeat/navheader.html");
+          });
+        </script>
+        <div class="balancenotes-container">
+          <div class="balance-history">
+            <div class="balance-row">
+              <ul id="balance-list"></ul>
             </div>
-            <!-- 
+          </div>
+          <div id="balance-text"></div>
+        </div>
+        <!-- 
             <div class="scroller">
                 let up = "&#x21e7;"; let down = "&#x21e9;"
                 <div class="scroller-background">
@@ -59,18 +56,23 @@
                 </div>
             </div>
             -->
-            <div class="shop-container">
-                <h1>Walmart Shop</h1>
-                <p style="text-align: center;">Shop will be updated every abyss rotation</p>
-                <div class="shop-row">
-                    <img src="" class="shop-image" id="shop-cycle">
-                    <div class="shop-rules">
-                        <h1>Additional Notes</h1>
-                        <p>Lumine is Dendro Traveler </p>
-                        <p>Aether is Anemo Traveler </p>
-                        <p>The other Travelers are <b>(0 cost)</b></p>
-                        <p>Xiangling when paired with Bennett will have an extra <b>(2 cost)</b></p>
-                        <!--
+        <div class="shop-container">
+          <h1>Walmart Shop</h1>
+          <p style="text-align: center">
+            Shop will be updated every abyss rotation
+          </p>
+          <div class="shop-row">
+            <img src="" class="shop-image" id="shop-cycle" />
+            <div class="shop-rules">
+              <h1>Additional Notes</h1>
+              <p>Lumine is Dendro Traveler</p>
+              <p>Aether is Anemo Traveler</p>
+              <p>The other Travelers are <b>(0 cost)</b></p>
+              <p>
+                Xiangling when paired with Bennett will have an extra
+                <b>(2 cost)</b>
+              </p>
+              <!--
                             <div id="discounts">
                                 <h1>Discounts</h1>
                                 <p> Raiden 17% off: 12 -> 10 </p>
@@ -78,21 +80,20 @@
                                 <p> Collei, Anemo MC 50% off: 4 -> 2 </p>
                             </div>
                         -->
-                    </div>
-                </div>
             </div>
-            <div id="footer"></div>
-            <script>
-                $(function () {
-                    $("#footer").load("Repeat/footer.html");
-                });
-            </script>
+          </div>
         </div>
+        <div id="footer"></div>
+        <script>
+          $(function () {
+            $("#footer").load("Repeat/footer.html");
+          });
+        </script>
+      </div>
     </main>
     <script>
-        loadCycle(12);
-        loadBalanceHistory(12);
+      loadCycle(currentCycle);
+      loadBalanceHistory(currentCycle);
     </script>
-</body>
-
+  </body>
 </html>
