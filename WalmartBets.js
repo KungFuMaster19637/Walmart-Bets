@@ -1,5 +1,5 @@
 //Constants
-const currentCycle = 14;
+const currentCycle = 16;
 const totalBudget = 70;
 
 //#region Loading Shop and Balance Notes
@@ -450,6 +450,7 @@ function loadManualCharacterCosts() {
     Sucrose: ["Anemo", 4, "Catalyst", 4],
     Faruzan: ["Anemo", 4, "Bow", 4],
     Sayu: ["Anemo", 4, "Claymore", 2],
+    Lynette: ["Anemo", 4, "Sword", 2],
     Kazuha: ["Anemo", 5, "Sword", 12],
     Venti: ["Anemo", 5, "Bow", 6],
     Jean: ["Anemo", 5, "Sword", 2],
@@ -461,6 +462,7 @@ function loadManualCharacterCosts() {
     Layla: ["Cryo", 4, "Sword", 2],
     Rosaria: ["Cryo", 4, "Polearm", 4],
     Chongyun: ["Cryo", 4, "Claymore", 4],
+    // Freminet: ["Cryo", 4, "Claymore", 4],
     Ayaka: ["Cryo", 5, "Sword", 8],
     Eula: ["Cryo", 5, "Claymore", 2],
     Ganyu: ["Cryo", 5, "Bow", 6],
@@ -516,6 +518,7 @@ function loadManualCharacterCosts() {
     Yoimiya: ["Pyro", 5, "Bow", 0],
     Klee: ["Pyro", 5, "Catalyst", 0],
     Dehya: ["Pyro", 5, "Claymore", 0],
+    Lyney: ["Pyro", 5, "Bow", 8],
   };
 }
 //#endregion
