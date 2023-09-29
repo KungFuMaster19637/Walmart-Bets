@@ -1,5 +1,5 @@
 //Constants
-const currentCycle = 16;
+const currentCycle = 17;
 const totalBudget = 70;
 
 //#region Loading Shop and Balance Notes
@@ -508,6 +508,7 @@ function loadManualCharacterCosts() {
     Tartaglia: ["Hydro", 5, "Bow", 8],
     Mona: ["Hydro", 5, "Catalyst", 2],
     Nilou: ["Hydro", 5, "Sword", 8],
+    Neuvillette: ["Hydro", 5, "Catalyst", 6],
     Bennett: ["Pyro", 4, "Sword", 10],
     Xiangling: ["Pyro", 4, "Polearm", 8],
     Yanfei: ["Pyro", 4, "Catalyst", 0],
