@@ -1,5 +1,5 @@
 //Constants
-const currentCycle = 17;
+const currentCycle = 18;
 const totalBudget = 70;
 
 //#region Loading Shop and Balance Notes
