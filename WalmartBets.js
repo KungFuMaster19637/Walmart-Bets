@@ -1,5 +1,5 @@
 //Constants
-const currentCycle = 18;
+const currentCycle = 19;
 const totalBudget = 70;
 
 //#region Loading Shop and Balance Notes
@@ -38,7 +38,7 @@ function readTextFile(file) {
 function loadShop(cycle) {
   document
     .getElementById("shop-cycle")
-    .setAttribute("src", `/ProjectWB/Shop/TierlistCycle${cycle}.png`);
+    .setAttribute("src", `Shop/TierlistCycle${cycle}.png`);
 }
 
 function loadCycle(cycle) {
@@ -260,7 +260,7 @@ function ProcessExcel(data) {
 }
 
 function loadPictures(imageName) {
-  let fullLink = "/ProjectWB/Images/Characters/" + imageName + ".png";
+  let fullLink = "Images/Characters/" + imageName + ".png";
   return fullLink;
 }
 
@@ -338,8 +338,7 @@ function loadCharacterCostsFromCSV() {
 function loadPortraits() {
   $.each(characterCostMap, function (name, details) {
     var characterName = name;
-    var characterImage =
-      "/ProjectWB/Images/Characters/" + characterName + ".png";
+    var characterImage = "Images/Characters/" + characterName + ".png";
     var characterElement = details[0];
     var characterRarity = details[1];
     var characterWeapon = details[2];
@@ -357,7 +356,7 @@ function loadPortraits() {
 }
 function fillEmptySlots() {
   $(".character-selected").each(function () {
-    $(this).find("img").attr("src", "/ProjectWB/Images/Characters/Unknown.png");
+    $(this).find("img").attr("src", "Images/Characters/Unknown.png");
     $(this).find("img").attr("alt", "");
     $(this).find("p").attr("data-cost", 0);
   });
@@ -426,9 +425,7 @@ $(document).ready(function () {
       characterList.splice(index, 1);
     }
 
-    parentDiv
-      .find("img")
-      .attr("src", "/ProjectWB/Images/Characters/Unknown.png");
+    parentDiv.find("img").attr("src", "Images/Characters/Unknown.png");
     parentDiv.find("img").attr("alt", "");
     parentDiv.find("p").attr("data-cost", 0);
     /*
@@ -552,19 +549,3 @@ function calculateTime() {
     minutes
   )}:${seconds}`;
 }
-/*
-let navbar = document.getElementById("myNavBar");
-let sticky = navbar.offsetTop;
-window.onscroll = function() {stickyNav()};
-
-function stickyNav() {
-    console.log(window.scrollY);
-  if (window.scrollY >= sticky) {
-    alert("smoll");
-    navbar.classList.add("sticky");
-  } else {
-    alert("smoll");
-
-    navbar.classList.remove("sticky");
-  }
-}*/
