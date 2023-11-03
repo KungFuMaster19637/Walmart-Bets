@@ -1,47 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
     <title>Walmart Bets</title>
-    <link rel="icon" href="/ProjectWB/Images/Background/Dice.png">
-    <link rel="stylesheet" href="WalmartBets.css">
-    <link rel="stylesheet" href="/ProjectWB/Libraries/tabulator-master/dist/css/tabulator.min.css">
-    <link rel="stylesheet" href="/ProjectWB/Libraries/tabulator-master/dist/css/tabulator_site.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="/ProjectWB/Libraries/tabulator-master/dist/js/tabulator.min.js"></script>
+    <link rel="icon" href="Images/Background/Dice.png" />
+    <link rel="stylesheet" href="WalmartBets.css" />
+    <link
+      rel="stylesheet"
+      href="Libraries/tabulator-master/dist/css/tabulator.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="Libraries/tabulator-master/dist/css/tabulator_site.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="Libraries/tabulator-master/dist/js/tabulator.min.js"
+    ></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
-    <script src="/ProjectWB/WalmartBets.js"></script>
-</head>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"
+    ></script>
+    <script src="WalmartBets.js"></script>
+  </head>
 
-<body>
+  <body>
     <main>
-        <div class="capsule">
-            <div id="nav-placeholder"></div>
-            <script>
-                $(function () {
-                    $("#nav-placeholder").load("Repeat/navheader.html");
-                });
-            </script>
-            <script>
-                window.onload = readFromExcel("/ProjectWB/leaderboard.xlsx");
-            </script>
-            <div class="leaderboard-container">
-                <div id="leaderboard-table">
-                </div>
-            </div>
-            <div id="footer"></div>
-            <script>
-                $(function () {
-                    $("#footer").load("Repeat/footer.html");
-                });
-            </script>
+      <div class="capsule">
+        <div id="nav-placeholder"></div>
+        <script>
+          $(function () {
+            $("#nav-placeholder").load("Repeat/navheader.html");
+          });
+        </script>
+        <script>
+          window.onload = readFromExcel("leaderboard.xlsx");
+        </script>
+        <div class="leaderboard-container">
+          <div id="leaderboard-table"></div>
         </div>
+        <div id="footer"></div>
+        <script>
+          $(function () {
+            $("#footer").load("Repeat/footer.html");
+          });
+        </script>
+      </div>
     </main>
-</body>
-
+  </body>
 </html>
