@@ -1,6 +1,6 @@
 //Constants
-const currentCycle = 19;
-const totalBudget = 70;
+const currentCycle = 1;
+const totalBudget = 60;
 
 //#region Loading Shop and Balance Notes
 function readTextFile(file) {
@@ -38,7 +38,7 @@ function readTextFile(file) {
 function loadShop(cycle) {
   document
     .getElementById("shop-cycle")
-    .setAttribute("src", `Shop/TierlistCycle${cycle}.png`);
+    .setAttribute("src", `Shop/Cycle${cycle}.png`);
 }
 
 function loadCycle(cycle) {
@@ -466,7 +466,7 @@ function loadManualCharacterCosts() {
     Chongyun: ["Cryo", 4, "Claymore", 4],
     Mika: ["Cryo", 4, "Catalyst", 0],
     Freminet: ["Cryo", 4, "Claymore", 0],
-    Charlotte: ["Cryo", 4, "Catalyst", 0],
+    // Charlotte: ["Cryo", 4, "Catalyst", 0],
     Ayaka: ["Cryo", 5, "Sword", 8],
     Eula: ["Cryo", 5, "Claymore", 2],
     Ganyu: ["Cryo", 5, "Bow", 6],
@@ -513,7 +513,7 @@ function loadManualCharacterCosts() {
     Mona: ["Hydro", 5, "Catalyst", 2],
     Nilou: ["Hydro", 5, "Sword", 8],
     Neuvillette: ["Hydro", 5, "Catalyst", 8],
-    Furina: ["Hydro", 5, "Sword", 8],
+    // Furina: ["Hydro", 5, "Sword", 8],
     Bennett: ["Pyro", 4, "Sword", 12],
     Xiangling: ["Pyro", 4, "Polearm", 10],
     Yanfei: ["Pyro", 4, "Catalyst", 0],
