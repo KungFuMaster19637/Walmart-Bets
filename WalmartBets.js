@@ -1,5 +1,5 @@
 //Constants
-const currentCycle = 1;
+const currentCycle = 2;
 const totalBudget = 60;
 
 //#region Loading Shop and Balance Notes
@@ -466,7 +466,7 @@ function loadManualCharacterCosts() {
     Chongyun: ["Cryo", 4, "Claymore", 4],
     Mika: ["Cryo", 4, "Catalyst", 0],
     Freminet: ["Cryo", 4, "Claymore", 0],
-    // Charlotte: ["Cryo", 4, "Catalyst", 0],
+    Charlotte: ["Cryo", 4, "Catalyst", 2],
     Ayaka: ["Cryo", 5, "Sword", 6],
     Eula: ["Cryo", 5, "Claymore", 4],
     Ganyu: ["Cryo", 5, "Bow", 4],
@@ -479,7 +479,7 @@ function loadManualCharacterCosts() {
     Nahida: ["Dendro", 5, "Catalyst", 12],
     TravelerDendro: ["Dendro", 5, "Sword", 6],
     Tighnari: ["Dendro", 5, "Bow", 6],
-    Collei: ["Dendro", 4, "Bow", 2],
+    Collei: ["Dendro", 4, "Bow", 4],
     Kaveh: ["Dendro", 4, "Claymore", 2],
     Kirara: ["Dendro", 4, "Claymore", 4],
     Yaoyao: ["Dendro", 4, "Polearm", 4],
@@ -490,7 +490,7 @@ function loadManualCharacterCosts() {
     Razor: ["Electro", 4, "Claymore", 2],
     Dori: ["Electro", 4, "Claymore", 0],
     Lisa: ["Electro", 4, "Catalyst", 4],
-    Raiden: ["Electro", 5, "Polearm", 10],
+    Raiden: ["Electro", 5, "Polearm", 8],
     Yae: ["Electro", 5, "Catalyst", 6],
     Cyno: ["Electro", 5, "Polearm", 4],
     TravelerElectro: ["Electro", 5, "Sword", 0],
@@ -503,6 +503,7 @@ function loadManualCharacterCosts() {
     Zhongli: ["Geo", 5, "Polearm", 6],
     Albedo: ["Geo", 5, "Sword", 4],
     TravelerGeo: ["Geo", 5, "Sword", 0],
+    // Navia: ["Geo", 5, "Claymore", 6],
     Xingqiu: ["Hydro", 4, "Sword", 10],
     Barbara: ["Hydro", 4, "Catalyst", 2],
     Candace: ["Hydro", 4, "Polearm", 0],
@@ -512,20 +513,21 @@ function loadManualCharacterCosts() {
     Tartaglia: ["Hydro", 5, "Bow", 6],
     Mona: ["Hydro", 5, "Catalyst", 4],
     Nilou: ["Hydro", 5, "Sword", 8],
-    // Neuvillette: ["Hydro", 5, "Catalyst", 12],
-    // Furina: ["Hydro", 5, "Sword", 8],
+    Neuvillette: ["Hydro", 5, "Catalyst", 12],
+    Furina: ["Hydro", 5, "Sword", 10],
     Bennett: ["Pyro", 4, "Sword", 12],
     Xiangling: ["Pyro", 4, "Polearm", 10],
     Yanfei: ["Pyro", 4, "Catalyst", 2],
     Thoma: ["Pyro", 4, "Polearm", 2],
     Amber: ["Pyro", 4, "Bow", 0],
     Xinyan: ["Pyro", 4, "Claymore", 0],
-    HuTao: ["Pyro", 5, "Polearm", 8],
+    HuTao: ["Pyro", 5, "Polearm", 10],
     Diluc: ["Pyro", 5, "Claymore", 4],
     Yoimiya: ["Pyro", 5, "Bow", 2],
     Klee: ["Pyro", 5, "Catalyst", 2],
     Dehya: ["Pyro", 5, "Claymore", 0],
     Lyney: ["Pyro", 5, "Bow", 8],
+    // Chevreuse: ["Pyro", 4, "Polearm", 4],
   };
 }
 //#endregion
