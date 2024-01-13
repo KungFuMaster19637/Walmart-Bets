@@ -512,7 +512,7 @@ function loadManualCharacterCosts() {
     Ayato: ["Hydro", 5, "Sword", 6],
     Tartaglia: ["Hydro", 5, "Bow", 6],
     Mona: ["Hydro", 5, "Catalyst", 4],
-    Nilou: ["Hydro", 5, "Sword", 8],
+    Nilou: ["Hydro", 5, "Sword", 10],
     Neuvillette: ["Hydro", 5, "Catalyst", 12],
     Furina: ["Hydro", 5, "Sword", 10],
     Bennett: ["Pyro", 4, "Sword", 12],
