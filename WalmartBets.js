@@ -454,11 +454,12 @@ function loadManualCharacterCosts() {
     Sayu: ["Anemo", 4, "Claymore", 4],
     Lynette: ["Anemo", 4, "Sword", 2],
     Kazuha: ["Anemo", 5, "Sword", 12],
-    Venti: ["Anemo", 5, "Bow", 6],
+    Venti: ["Anemo", 5, "Bow", 8],
     Jean: ["Anemo", 5, "Sword", 4],
     Wanderer: ["Anemo", 5, "Catalyst", 4],
     Xiao: ["Anemo", 5, "Polearm", 6],
     TravelerAnemo: ["Anemo", 5, "Sword", 2],
+    // Xianyun: ["Anemo", 5, "Catalyst", 6],
     Diona: ["Cryo", 4, "Bow", 2],
     Kaeya: ["Cryo", 4, "Sword", 4],
     Layla: ["Cryo", 4, "Sword", 2],
@@ -503,7 +504,7 @@ function loadManualCharacterCosts() {
     Zhongli: ["Geo", 5, "Polearm", 6],
     Albedo: ["Geo", 5, "Sword", 4],
     TravelerGeo: ["Geo", 5, "Sword", 0],
-    // Navia: ["Geo", 5, "Claymore", 6],
+    Navia: ["Geo", 5, "Claymore", 6],
     Xingqiu: ["Hydro", 4, "Sword", 10],
     Barbara: ["Hydro", 4, "Catalyst", 2],
     Candace: ["Hydro", 4, "Polearm", 0],
@@ -512,7 +513,7 @@ function loadManualCharacterCosts() {
     Ayato: ["Hydro", 5, "Sword", 6],
     Tartaglia: ["Hydro", 5, "Bow", 6],
     Mona: ["Hydro", 5, "Catalyst", 4],
-    Nilou: ["Hydro", 5, "Sword", 10],
+    Nilou: ["Hydro", 5, "Sword", 12],
     Neuvillette: ["Hydro", 5, "Catalyst", 12],
     Furina: ["Hydro", 5, "Sword", 10],
     Bennett: ["Pyro", 4, "Sword", 12],
@@ -527,7 +528,8 @@ function loadManualCharacterCosts() {
     Klee: ["Pyro", 5, "Catalyst", 2],
     Dehya: ["Pyro", 5, "Claymore", 0],
     Lyney: ["Pyro", 5, "Bow", 8],
-    // Chevreuse: ["Pyro", 4, "Polearm", 4],
+    Chevreuse: ["Pyro", 4, "Polearm", 4],
+    // Gaming: ["Pyro", 4, "Claymore", 4]
   };
 }
 //#endregion
