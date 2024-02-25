@@ -278,18 +278,22 @@ function updateTotalCost() {
     }
   });
 
-  //Check Bennett + Xiangling Combo:
-  if (
-    characterList.includes("Bennett") &&
-    characterList.includes("Xiangling")
-  ) {
-    totalCost += 2;
+  const firstTeam = characterList.slice(0, 4);
+  const secondTeam = characterList.slice(-4);
+  function upCostWhenSameTeam(character1, character2) {
+    if (
+      (firstTeam.includes(character1) && firstTeam.includes(character2)) ||
+      (secondTeam.includes(character1) && secondTeam.includes(character2))
+    ) {
+      totalCost += 2;
+    }
   }
 
+  //Check Bennett + Xiangling Combo:
+  upCostWhenSameTeam("Bennett", "Xiangling");
+
   //Check Xingqiu + Yelan Combo:
-  if (characterList.includes("Xingqiu") && characterList.includes("Yelan")) {
-    totalCost += 2;
-  }
+  upCostWhenSameTeam("Xingqiu", "Yelan");
 
   if (!isNaN(totalCost)) {
     $("#total-cost").text("Total Cost: " + totalCost);
