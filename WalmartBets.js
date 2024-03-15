@@ -463,7 +463,7 @@ function loadManualCharacterCosts() {
     Wanderer: ["Anemo", 5, "Catalyst", 4],
     Xiao: ["Anemo", 5, "Polearm", 6],
     TravelerAnemo: ["Anemo", 5, "Sword", 2],
-    // Xianyun: ["Anemo", 5, "Catalyst", 6],
+    Xianyun: ["Anemo", 5, "Catalyst", 6],
     Diona: ["Cryo", 4, "Bow", 2],
     Kaeya: ["Cryo", 4, "Sword", 4],
     Layla: ["Cryo", 4, "Sword", 2],
@@ -509,6 +509,7 @@ function loadManualCharacterCosts() {
     Albedo: ["Geo", 5, "Sword", 4],
     TravelerGeo: ["Geo", 5, "Sword", 0],
     Navia: ["Geo", 5, "Claymore", 6],
+    // Chiori: ["Geo", 5, "Sword", 4],
     Xingqiu: ["Hydro", 4, "Sword", 10],
     Barbara: ["Hydro", 4, "Catalyst", 2],
     Candace: ["Hydro", 4, "Polearm", 0],
@@ -533,7 +534,7 @@ function loadManualCharacterCosts() {
     Dehya: ["Pyro", 5, "Claymore", 0],
     Lyney: ["Pyro", 5, "Bow", 8],
     Chevreuse: ["Pyro", 4, "Polearm", 4],
-    // Gaming: ["Pyro", 4, "Claymore", 4]
+    Gaming: ["Pyro", 4, "Claymore", 4],
   };
 }
 //#endregion
