@@ -290,7 +290,7 @@ function updateTotalCost() {
   }
 
   //Check Bennett + Xiangling Combo:
-  upCostWhenSameTeam("Bennett", "Xiangling");
+  // upCostWhenSameTeam("Bennett", "Xiangling");
 
   //Check Xingqiu + Yelan Combo:
   upCostWhenSameTeam("Xingqiu", "Yelan");
