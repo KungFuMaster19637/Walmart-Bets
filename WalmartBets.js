@@ -532,8 +532,8 @@ function loadManualCharacterCosts() {
     Yoimiya: ["Pyro", 5, "Bow", 2],
     Klee: ["Pyro", 5, "Catalyst", 2],
     Dehya: ["Pyro", 5, "Claymore", 0],
-    Lyney: ["Pyro", 5, "Bow", 8],
-    Arlecchino: ["Pyro", 5, "Polearm", 6],
+    Lyney: ["Pyro", 5, "Bow", 6],
+    // Arlecchino: ["Pyro", 5, "Polearm", 6],
     Chevreuse: ["Pyro", 4, "Polearm", 4],
     Gaming: ["Pyro", 4, "Claymore", 4],
   };
