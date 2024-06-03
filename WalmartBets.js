@@ -1,5 +1,5 @@
 //Constants
-const currentCycle = 4;
+const currentCycle = 6;
 const totalBudget = 60;
 
 //#region Loading Shop and Balance Notes
@@ -267,33 +267,32 @@ function loadPictures(imageName) {
 //#endregion
 
 //#region Loading Team Builder
-
-function updateTotalCost() {
+function updateCharacterCost() {
   var totalCost = 0;
   $(".cost").each(function () {
-    var cost = parseInt($(this).attr("data-cost"));
-    if (!isNaN(cost)) {
-      $(this).text("Cost: " + cost);
+    var costString = $(this).attr("data-cost");
+    // Extract numeric part using regular expression
+    var numericPartMatch = costString.match(/\d+/);
+    var namePartMatch = costString.match(/[A-Za-z]+/);
+    if (numericPartMatch !== null && namePartMatch !== null) {
+      var cost = parseInt(numericPartMatch[0]); // Extracts the first occurrence of a number in the string
+      var name = namePartMatch[0]; // Extracts the first occurrence of letters in the string
+      $(this).text(name + "; " + "Cost: " + cost);
       totalCost += cost;
+    } else {
+      $(this).text("Cost: 0");
     }
   });
 
-  const firstTeam = characterList.slice(0, 4);
-  const secondTeam = characterList.slice(-4);
-  function upCostWhenSameTeam(character1, character2) {
-    if (
-      (firstTeam.includes(character1) && firstTeam.includes(character2)) ||
-      (secondTeam.includes(character1) && secondTeam.includes(character2))
-    ) {
-      totalCost += 2;
-    }
-  }
-
-  //Check Bennett + Xiangling Combo:
-  // upCostWhenSameTeam("Bennett", "Xiangling");
-
-  //Check Xingqiu + Yelan Combo:
-  upCostWhenSameTeam("Xingqiu", "Yelan");
+  // function updateCharacterCost() {
+  //   var totalCost = 0;
+  //   $(".cost").each(function () {
+  //     var cost = parseInt($(this).attr("data-cost"));
+  //     if (!isNaN(cost)) {
+  //       $(this).text("Cost: " + cost);
+  //       totalCost += cost;
+  //     }
+  //   });
 
   if (!isNaN(totalCost)) {
     $("#total-cost").text("Total Cost: " + totalCost);
@@ -304,11 +303,6 @@ function updateTotalCost() {
         return $(this).attr("data-cost") > totalBudget - totalCost;
       })
       .addClass("disabled");
-    /*
-        if (current5Stars > max5Stars)
-            $("#over-5star").show();
-        else $("#over-5star").hide();
-        */
   } else {
     $("#total-cost").text("");
   }
@@ -348,21 +342,25 @@ function loadPortraits() {
     var characterWeapon = details[2];
     var characterCost = details[3];
 
-    $("#characterpicker").append(`
-    <div class="character" style="display: inline-block; position: relative; min-width: 64px; min-height: 64px;">
-      <img src="${characterImage}" alt="${characterName}" data-rar="${characterRarity}" data-ele="${characterElement}" data-weap="${characterWeapon}" style="width: 64px; height: 90px;">
-      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-        <p style="color: white; font-size: 36px; text-shadow: 2px 2px 2px black;position: absolute; top: 0; left: 0;">${characterCost}</p>
+    var characterDiv = $(`
+      <div class="character" style="display: inline-block; position: relative; min-width: 64px; min-height: 64px;">
+        <img src="${characterImage}" alt="${characterName}" data-rar="${characterRarity}" data-ele="${characterElement}" data-weap="${characterWeapon}" style="width: 64px; height: 90px;">
+        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; justify-content: center; align-items: center; background-color: rgba(0, 0, 0, 0.5);">
+          <p class="overlay-text" style="color: white; font-size: 12px; text-shadow: 1px 1px 1px black;"></p>
+        </div>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+          <p style="color: white; font-size: 36px; text-shadow: 2px 2px 2px black; position: absolute; top: 0; left: 0;">${characterCost}</p>
+          <p style="color: white; font-size: 10px; text-shadow: 1px 1px 1px black; margin-top: 80%;">${characterName}</p>
+        </div>
       </div>
-    </div>
-  `);
-  });
-}
-function fillEmptySlots() {
-  $(".character-selected").each(function () {
-    $(this).find("img").attr("src", "Images/Characters/Unknown.png");
-    $(this).find("img").attr("alt", "");
-    $(this).find("p").attr("data-cost", 0);
+    `);
+    var img = characterDiv.find("img")[0];
+    img.addEventListener("error", function (event) {
+      event.target.src = "Images/Characters/Unknown.png";
+      event.onerror = null;
+    });
+
+    $("#characterpicker").append(characterDiv);
   });
 }
 
@@ -374,7 +372,7 @@ $(document).ready(function () {
     $(".character-selected").removeClass("selected").css("box-shadow", "");
     $(this).addClass("selected").css("box-shadow", "0 0 10px 5px blue");
     selectedCharacter = $(this).attr("id");
-    updateTotalCost();
+    updateCharacterCost();
   });
 
   $(".character").click(function () {
@@ -406,13 +404,7 @@ $(document).ready(function () {
       .attr("data-rar", characterRarity);
 
     characterList.push($(this).find("img").attr("alt"));
-
-    /*
-        if (characterRarity == 5)
-            current5Stars++;
-            */
-
-    updateTotalCost();
+    updateCharacterCost();
     selectedCharacterID = parseInt(selectedCharacter.slice(-1));
     if (selectedCharacterID == 8) selectedCharacterID = 1;
     else selectedCharacterID++;
@@ -432,53 +424,59 @@ $(document).ready(function () {
     parentDiv.find("img").attr("src", "Images/Characters/Unknown.png");
     parentDiv.find("img").attr("alt", "");
     parentDiv.find("p").attr("data-cost", 0);
-    /*
-        if (parentDiv.find('p').attr('data-rar') == 5)
-            current5Stars--;
-         */
+
     $(".character img[alt^=" + clearChar + "]").removeClass("disabled");
-    updateTotalCost();
+    updateCharacterCost();
   });
 
   $("#close-all").click(function () {
     fillEmptySlots();
-    //current5Stars = 0;
     characterList.length = 0;
     $(".character img").removeClass("disabled").removeClass("selected");
-    updateTotalCost();
+    updateCharacterCost();
   });
 });
+
+function fillEmptySlots() {
+  $(".character-selected").each(function () {
+    $(this).find("img").attr("src", "Images/Characters/Unknown.png");
+    $(this).find("img").attr("alt", "");
+    $(this).find("p").attr("data-cost", 0);
+  });
+}
 
 function loadManualCharacterCosts() {
   characterCostMap = {
     //Character: Element, Rarity, Weapon, Cost
-    Heizou: ["Anemo", 4, "Catalyst", 2],
-    Sucrose: ["Anemo", 4, "Catalyst", 6],
-    Faruzan: ["Anemo", 4, "Bow", 4],
-    Sayu: ["Anemo", 4, "Claymore", 4],
-    Lynette: ["Anemo", 4, "Sword", 2],
     Kazuha: ["Anemo", 5, "Sword", 12],
     Venti: ["Anemo", 5, "Bow", 8],
-    Jean: ["Anemo", 5, "Sword", 4],
-    Wanderer: ["Anemo", 5, "Catalyst", 4],
-    Xiao: ["Anemo", 5, "Polearm", 6],
-    TravelerAnemo: ["Anemo", 5, "Sword", 2],
+    Sucrose: ["Anemo", 4, "Catalyst", 6],
     Xianyun: ["Anemo", 5, "Catalyst", 6],
-    Diona: ["Cryo", 4, "Bow", 2],
-    Kaeya: ["Cryo", 4, "Sword", 4],
-    Layla: ["Cryo", 4, "Sword", 2],
-    Rosaria: ["Cryo", 4, "Polearm", 4],
-    Chongyun: ["Cryo", 4, "Claymore", 4],
-    Mika: ["Cryo", 4, "Catalyst", 0],
-    Freminet: ["Cryo", 4, "Claymore", 0],
-    Charlotte: ["Cryo", 4, "Catalyst", 2],
+    Xiao: ["Anemo", 5, "Polearm", 6],
+    Faruzan: ["Anemo", 4, "Bow", 4],
+    Jean: ["Anemo", 5, "Sword", 4],
+    Sayu: ["Anemo", 4, "Claymore", 4],
+    Wanderer: ["Anemo", 5, "Catalyst", 4],
+    Heizou: ["Anemo", 4, "Catalyst", 2],
+    Lynette: ["Anemo", 4, "Sword", 2],
+    TravelerAnemo: ["Anemo", 5, "Sword", 2],
+
     Ayaka: ["Cryo", 5, "Sword", 6],
+    Shenhe: ["Cryo", 5, "Polearm", 6],
+    Chongyun: ["Cryo", 4, "Claymore", 4],
     Eula: ["Cryo", 5, "Claymore", 4],
     Ganyu: ["Cryo", 5, "Bow", 4],
-    Shenhe: ["Cryo", 5, "Polearm", 6],
+    Kaeya: ["Cryo", 4, "Sword", 4],
+    Rosaria: ["Cryo", 4, "Polearm", 4],
+    Charlotte: ["Cryo", 4, "Catalyst", 2],
+    Diona: ["Cryo", 4, "Bow", 2],
+    Layla: ["Cryo", 4, "Sword", 2],
     Aloy: ["Cryo", 5, "Bow", 0],
+    Freminet: ["Cryo", 4, "Claymore", 0],
+    Mika: ["Cryo", 4, "Catalyst", 0],
     Qiqi: ["Cryo", 5, "Sword", 0],
     Wriothesley: ["Cryo", 5, "Catalyst", 4],
+
     Alhaitham: ["Dendro", 5, "Sword", 8],
     Baizhu: ["Dendro", 5, "Catalyst", 4],
     Nahida: ["Dendro", 5, "Catalyst", 12],
@@ -488,18 +486,22 @@ function loadManualCharacterCosts() {
     Kaveh: ["Dendro", 4, "Claymore", 2],
     Kirara: ["Dendro", 4, "Claymore", 4],
     Yaoyao: ["Dendro", 4, "Polearm", 4],
+
     Fischl: ["Electro", 4, "Bow", 8],
-    Beidou: ["Electro", 4, "Claymore", 4],
-    Sara: ["Electro", 4, "Bow", 4],
+    Raiden: ["Electro", 5, "Polearm", 8],
+    Clorinde: ["Electro", 5, "Sword", 6],
+    Keqing: ["Electro", 5, "Sword", 6],
     Kuki: ["Electro", 4, "Sword", 6],
+    Yae: ["Electro", 5, "Catalyst", 6],
+    Beidou: ["Electro", 4, "Claymore", 4],
+    Cyno: ["Electro", 5, "Polearm", 4],
+    Lisa: ["Electro", 4, "Catalyst", 4],
+    Sara: ["Electro", 4, "Bow", 4],
+    Sethos: ["Electro", 4, "Catalyst", 4],
     Razor: ["Electro", 4, "Claymore", 2],
     Dori: ["Electro", 4, "Claymore", 0],
-    Lisa: ["Electro", 4, "Catalyst", 4],
-    Raiden: ["Electro", 5, "Polearm", 8],
-    Yae: ["Electro", 5, "Catalyst", 6],
-    Cyno: ["Electro", 5, "Polearm", 4],
     TravelerElectro: ["Electro", 5, "Sword", 0],
-    Keqing: ["Electro", 5, "Sword", 6],
+
     Gorou: ["Geo", 4, "Bow", 2],
     Ningguang: ["Geo", 4, "Catalyst", 0],
     Noelle: ["Geo", 4, "Claymore", 0],
@@ -510,32 +512,35 @@ function loadManualCharacterCosts() {
     TravelerGeo: ["Geo", 5, "Sword", 0],
     Navia: ["Geo", 5, "Claymore", 6],
     Chiori: ["Geo", 5, "Sword", 6],
-    Xingqiu: ["Hydro", 4, "Sword", 10],
-    Barbara: ["Hydro", 4, "Catalyst", 2],
-    Candace: ["Hydro", 4, "Polearm", 0],
-    Kokomi: ["Hydro", 5, "Catalyst", 8],
-    Yelan: ["Hydro", 5, "Bow", 10],
-    Ayato: ["Hydro", 5, "Sword", 6],
-    Tartaglia: ["Hydro", 5, "Bow", 6],
-    Mona: ["Hydro", 5, "Catalyst", 4],
-    Nilou: ["Hydro", 5, "Sword", 12],
+
     Neuvillette: ["Hydro", 5, "Catalyst", 12],
     Furina: ["Hydro", 5, "Sword", 10],
+    Nilou: ["Hydro", 5, "Sword", 10],
+    Xingqiu: ["Hydro", 4, "Sword", 10],
+    Yelan: ["Hydro", 5, "Bow", 10],
+    Ayato: ["Hydro", 5, "Sword", 6],
+    Kokomi: ["Hydro", 5, "Catalyst", 6],
+    Tartaglia: ["Hydro", 5, "Bow", 6],
+    Mona: ["Hydro", 5, "Catalyst", 4],
+    Sigewinne: ["Hydro", 5, "Sword", 4],
+    Barbara: ["Hydro", 4, "Catalyst", 2],
+    Candace: ["Hydro", 4, "Polearm", 0],
+
     Bennett: ["Pyro", 4, "Sword", 12],
-    Xiangling: ["Pyro", 4, "Polearm", 10],
-    Yanfei: ["Pyro", 4, "Catalyst", 2],
-    Thoma: ["Pyro", 4, "Polearm", 2],
-    Amber: ["Pyro", 4, "Bow", 0],
-    Xinyan: ["Pyro", 4, "Claymore", 0],
     HuTao: ["Pyro", 5, "Polearm", 10],
-    Diluc: ["Pyro", 5, "Claymore", 4],
-    Yoimiya: ["Pyro", 5, "Bow", 2],
-    Klee: ["Pyro", 5, "Catalyst", 2],
-    Dehya: ["Pyro", 5, "Claymore", 0],
+    Xiangling: ["Pyro", 4, "Polearm", 8],
+    Arlecchino: ["Pyro", 5, "Polearm", 6],
     Lyney: ["Pyro", 5, "Bow", 6],
-    // Arlecchino: ["Pyro", 5, "Polearm", 6],
     Chevreuse: ["Pyro", 4, "Polearm", 4],
+    Diluc: ["Pyro", 5, "Claymore", 4],
     Gaming: ["Pyro", 4, "Claymore", 4],
+    Yanfei: ["Pyro", 4, "Catalyst", 2],
+    Klee: ["Pyro", 5, "Catalyst", 2],
+    Thoma: ["Pyro", 4, "Polearm", 2],
+    Yoimiya: ["Pyro", 5, "Bow", 2],
+    Amber: ["Pyro", 4, "Bow", 0],
+    Dehya: ["Pyro", 5, "Claymore", 0],
+    Xinyan: ["Pyro", 4, "Claymore", 0],
   };
 }
 //#endregion
