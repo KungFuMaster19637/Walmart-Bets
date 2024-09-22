@@ -1,5 +1,5 @@
 //Constants
-const currentCycle = 6;
+const currentCycle = "5.0";
 const totalBudget = 60;
 
 //#region Loading Shop and Balance Notes
@@ -38,7 +38,7 @@ function readTextFile(file) {
 function loadShop(cycle) {
   document
     .getElementById("shop-cycle")
-    .setAttribute("src", `Shop/Cycle${cycle}.png`);
+    .setAttribute("src", `Shop/${cycle}.png`);
 }
 
 function loadCycle(cycle) {
@@ -449,7 +449,7 @@ function loadManualCharacterCosts() {
   characterCostMap = {
     //Character: Element, Rarity, Weapon, Cost
     Kazuha: ["Anemo", 5, "Sword", 12],
-    Venti: ["Anemo", 5, "Bow", 8],
+    Venti: ["Anemo", 5, "Bow", 6],
     Sucrose: ["Anemo", 4, "Catalyst", 6],
     Xianyun: ["Anemo", 5, "Catalyst", 6],
     Xiao: ["Anemo", 5, "Polearm", 6],
@@ -468,6 +468,7 @@ function loadManualCharacterCosts() {
     Ganyu: ["Cryo", 5, "Bow", 4],
     Kaeya: ["Cryo", 4, "Sword", 4],
     Rosaria: ["Cryo", 4, "Polearm", 4],
+    Wriothesley: ["Cryo", 5, "Catalyst", 4],
     Charlotte: ["Cryo", 4, "Catalyst", 2],
     Diona: ["Cryo", 4, "Bow", 2],
     Layla: ["Cryo", 4, "Sword", 2],
@@ -475,17 +476,18 @@ function loadManualCharacterCosts() {
     Freminet: ["Cryo", 4, "Claymore", 0],
     Mika: ["Cryo", 4, "Catalyst", 0],
     Qiqi: ["Cryo", 5, "Sword", 0],
-    Wriothesley: ["Cryo", 5, "Catalyst", 4],
 
-    Alhaitham: ["Dendro", 5, "Sword", 8],
-    Baizhu: ["Dendro", 5, "Catalyst", 4],
     Nahida: ["Dendro", 5, "Catalyst", 12],
+    Alhaitham: ["Dendro", 5, "Sword", 8],
     TravelerDendro: ["Dendro", 5, "Sword", 6],
     Tighnari: ["Dendro", 5, "Bow", 6],
+    Kinich: ["Dendro", 5, "Claymore", 6],
+    Emilie: ["Dendro", 5, "Polearm", 6],
     Collei: ["Dendro", 4, "Bow", 4],
-    Kaveh: ["Dendro", 4, "Claymore", 2],
+    Baizhu: ["Dendro", 5, "Catalyst", 4],
     Kirara: ["Dendro", 4, "Claymore", 4],
     Yaoyao: ["Dendro", 4, "Polearm", 4],
+    Kaveh: ["Dendro", 4, "Claymore", 2],
 
     Fischl: ["Electro", 4, "Bow", 8],
     Raiden: ["Electro", 5, "Polearm", 8],
@@ -502,18 +504,20 @@ function loadManualCharacterCosts() {
     Dori: ["Electro", 4, "Claymore", 0],
     TravelerElectro: ["Electro", 5, "Sword", 0],
 
-    Gorou: ["Geo", 4, "Bow", 2],
-    Ningguang: ["Geo", 4, "Catalyst", 0],
-    Noelle: ["Geo", 4, "Claymore", 0],
-    Yunjin: ["Geo", 4, "Polearm", 2],
+    Navia: ["Geo", 5, "Claymore", 8],
     Itto: ["Geo", 5, "Claymore", 6],
     Zhongli: ["Geo", 5, "Polearm", 6],
-    Albedo: ["Geo", 5, "Sword", 4],
-    TravelerGeo: ["Geo", 5, "Sword", 0],
-    Navia: ["Geo", 5, "Claymore", 6],
     Chiori: ["Geo", 5, "Sword", 6],
+    Albedo: ["Geo", 5, "Sword", 4],
+    Gorou: ["Geo", 4, "Bow", 2],
+    Yunjin: ["Geo", 4, "Polearm", 2],
+    Kachina: ["Geo", 4, "Polearm", 2],
+    Ningguang: ["Geo", 4, "Catalyst", 0],
+    Noelle: ["Geo", 4, "Claymore", 0],
+    TravelerGeo: ["Geo", 5, "Sword", 0],
 
     Neuvillette: ["Hydro", 5, "Catalyst", 12],
+    Mualani: ["Hydro", 5, "Catalyst", 12],
     Furina: ["Hydro", 5, "Sword", 10],
     Nilou: ["Hydro", 5, "Sword", 10],
     Xingqiu: ["Hydro", 4, "Sword", 10],
@@ -527,11 +531,11 @@ function loadManualCharacterCosts() {
     Candace: ["Hydro", 4, "Polearm", 0],
 
     Bennett: ["Pyro", 4, "Sword", 12],
+    Arlecchino: ["Pyro", 5, "Polearm", 12],
     HuTao: ["Pyro", 5, "Polearm", 10],
     Xiangling: ["Pyro", 4, "Polearm", 8],
-    Arlecchino: ["Pyro", 5, "Polearm", 6],
     Lyney: ["Pyro", 5, "Bow", 6],
-    Chevreuse: ["Pyro", 4, "Polearm", 4],
+    Chevreuse: ["Pyro", 4, "Polearm", 6],
     Diluc: ["Pyro", 5, "Claymore", 4],
     Gaming: ["Pyro", 4, "Claymore", 4],
     Yanfei: ["Pyro", 4, "Catalyst", 2],
