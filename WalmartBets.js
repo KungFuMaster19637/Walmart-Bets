@@ -1,5 +1,5 @@
 //Constants
-const currentCycle = "5.0";
+const currentCycle = "5.1";
 const totalBudget = 60;
 
 //#region Loading Shop and Balance Notes
@@ -478,10 +478,10 @@ function loadManualCharacterCosts() {
     Qiqi: ["Cryo", 5, "Sword", 0],
 
     Nahida: ["Dendro", 5, "Catalyst", 12],
+    Kinich: ["Dendro", 5, "Claymore", 10],
     Alhaitham: ["Dendro", 5, "Sword", 8],
     TravelerDendro: ["Dendro", 5, "Sword", 6],
     Tighnari: ["Dendro", 5, "Bow", 6],
-    Kinich: ["Dendro", 5, "Claymore", 6],
     Emilie: ["Dendro", 5, "Polearm", 6],
     Collei: ["Dendro", 4, "Bow", 4],
     Baizhu: ["Dendro", 5, "Catalyst", 4],
@@ -490,20 +490,21 @@ function loadManualCharacterCosts() {
     Kaveh: ["Dendro", 4, "Claymore", 2],
 
     Fischl: ["Electro", 4, "Bow", 8],
-    Raiden: ["Electro", 5, "Polearm", 8],
+    Raiden: ["Electro", 5, "Polearm", 6],
     Clorinde: ["Electro", 5, "Sword", 6],
-    Keqing: ["Electro", 5, "Sword", 6],
     Kuki: ["Electro", 4, "Sword", 6],
     Yae: ["Electro", 5, "Catalyst", 6],
+    Keqing: ["Electro", 5, "Sword", 4],
     Beidou: ["Electro", 4, "Claymore", 4],
     Cyno: ["Electro", 5, "Polearm", 4],
     Lisa: ["Electro", 4, "Catalyst", 4],
     Sara: ["Electro", 4, "Bow", 4],
-    Sethos: ["Electro", 4, "Catalyst", 4],
+    Sethos: ["Electro", 4, "Catalyst", 2],
     Razor: ["Electro", 4, "Claymore", 2],
     Dori: ["Electro", 4, "Claymore", 0],
     TravelerElectro: ["Electro", 5, "Sword", 0],
 
+    Xilonen: ["Geo", 5, "CSword", 10],
     Navia: ["Geo", 5, "Claymore", 8],
     Itto: ["Geo", 5, "Claymore", 6],
     Zhongli: ["Geo", 5, "Polearm", 6],
@@ -519,20 +520,20 @@ function loadManualCharacterCosts() {
     Neuvillette: ["Hydro", 5, "Catalyst", 12],
     Mualani: ["Hydro", 5, "Catalyst", 12],
     Furina: ["Hydro", 5, "Sword", 10],
-    Nilou: ["Hydro", 5, "Sword", 10],
     Xingqiu: ["Hydro", 4, "Sword", 10],
+    Nilou: ["Hydro", 5, "Sword", 8],
     Yelan: ["Hydro", 5, "Bow", 10],
-    Ayato: ["Hydro", 5, "Sword", 6],
     Kokomi: ["Hydro", 5, "Catalyst", 6],
     Tartaglia: ["Hydro", 5, "Bow", 6],
+    Ayato: ["Hydro", 5, "Sword", 4],
     Mona: ["Hydro", 5, "Catalyst", 4],
     Sigewinne: ["Hydro", 5, "Sword", 4],
     Barbara: ["Hydro", 4, "Catalyst", 2],
     Candace: ["Hydro", 4, "Polearm", 0],
 
-    Bennett: ["Pyro", 4, "Sword", 12],
     Arlecchino: ["Pyro", 5, "Polearm", 12],
-    HuTao: ["Pyro", 5, "Polearm", 10],
+    Bennett: ["Pyro", 4, "Sword", 10],
+    HuTao: ["Pyro", 5, "Polearm", 8],
     Xiangling: ["Pyro", 4, "Polearm", 8],
     Lyney: ["Pyro", 5, "Bow", 6],
     Chevreuse: ["Pyro", 4, "Polearm", 6],
