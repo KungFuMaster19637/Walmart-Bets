@@ -1,5 +1,5 @@
 //Constants
-const currentCycle = "5.1";
+const currentCycle = "5.2";
 const totalBudget = 60;
 
 //#region Loading Shop and Balance Notes
@@ -448,7 +448,7 @@ function fillEmptySlots() {
 function loadManualCharacterCosts() {
   characterCostMap = {
     //Character: Element, Rarity, Weapon, Cost
-    Kazuha: ["Anemo", 5, "Sword", 12],
+    Kazuha: ["Anemo", 5, "Sword", 10],
     Venti: ["Anemo", 5, "Bow", 6],
     Sucrose: ["Anemo", 4, "Catalyst", 6],
     Xianyun: ["Anemo", 5, "Catalyst", 6],
@@ -477,7 +477,7 @@ function loadManualCharacterCosts() {
     Mika: ["Cryo", 4, "Catalyst", 0],
     Qiqi: ["Cryo", 5, "Sword", 0],
 
-    Nahida: ["Dendro", 5, "Catalyst", 12],
+    Nahida: ["Dendro", 5, "Catalyst", 10],
     Kinich: ["Dendro", 5, "Claymore", 10],
     Alhaitham: ["Dendro", 5, "Sword", 8],
     TravelerDendro: ["Dendro", 5, "Sword", 6],
@@ -497,8 +497,8 @@ function loadManualCharacterCosts() {
     Keqing: ["Electro", 5, "Sword", 4],
     Beidou: ["Electro", 4, "Claymore", 4],
     Cyno: ["Electro", 5, "Polearm", 4],
-    Lisa: ["Electro", 4, "Catalyst", 4],
     Sara: ["Electro", 4, "Bow", 4],
+    Lisa: ["Electro", 4, "Catalyst", 2],
     Sethos: ["Electro", 4, "Catalyst", 2],
     Razor: ["Electro", 4, "Claymore", 2],
     Dori: ["Electro", 4, "Claymore", 0],
@@ -529,7 +529,7 @@ function loadManualCharacterCosts() {
     Mona: ["Hydro", 5, "Catalyst", 4],
     Sigewinne: ["Hydro", 5, "Sword", 4],
     Barbara: ["Hydro", 4, "Catalyst", 2],
-    Candace: ["Hydro", 4, "Polearm", 0],
+    Candace: ["Hydro", 4, "Polearm", 2],
 
     Arlecchino: ["Pyro", 5, "Polearm", 12],
     Bennett: ["Pyro", 4, "Sword", 10],
@@ -543,8 +543,8 @@ function loadManualCharacterCosts() {
     Klee: ["Pyro", 5, "Catalyst", 2],
     Thoma: ["Pyro", 4, "Polearm", 2],
     Yoimiya: ["Pyro", 5, "Bow", 2],
+    Dehya: ["Pyro", 5, "Claymore", 2],
     Amber: ["Pyro", 4, "Bow", 0],
-    Dehya: ["Pyro", 5, "Claymore", 0],
     Xinyan: ["Pyro", 4, "Claymore", 0],
   };
 }
