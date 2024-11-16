@@ -463,7 +463,6 @@ function loadManualCharacterCosts() {
 
     Ayaka: ["Cryo", 5, "Sword", 6],
     Shenhe: ["Cryo", 5, "Polearm", 6],
-    Chongyun: ["Cryo", 4, "Claymore", 4],
     Eula: ["Cryo", 5, "Claymore", 4],
     Ganyu: ["Cryo", 5, "Bow", 4],
     Kaeya: ["Cryo", 4, "Sword", 4],
@@ -472,6 +471,7 @@ function loadManualCharacterCosts() {
     Charlotte: ["Cryo", 4, "Catalyst", 2],
     Diona: ["Cryo", 4, "Bow", 2],
     Layla: ["Cryo", 4, "Sword", 2],
+    Chongyun: ["Cryo", 4, "Claymore", 2],
     Aloy: ["Cryo", 5, "Bow", 0],
     Freminet: ["Cryo", 4, "Claymore", 0],
     Mika: ["Cryo", 4, "Catalyst", 0],
