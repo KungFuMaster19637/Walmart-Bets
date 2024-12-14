@@ -1,5 +1,5 @@
 //Constants
-const currentCycle = "5.2";
+const currentCycle = "5.3";
 const totalBudget = 60;
 
 //#region Loading Shop and Balance Notes
@@ -449,8 +449,9 @@ function loadManualCharacterCosts() {
   characterCostMap = {
     //Character: Element, Rarity, Weapon, Cost
     Kazuha: ["Anemo", 5, "Sword", 10],
+    Sucrose: ["Anemo", 4, "Catalyst", 8],
+    Chasca: ["Anemo", 5, "Bow", 8],
     Venti: ["Anemo", 5, "Bow", 6],
-    Sucrose: ["Anemo", 4, "Catalyst", 6],
     Xianyun: ["Anemo", 5, "Catalyst", 6],
     Xiao: ["Anemo", 5, "Polearm", 6],
     Faruzan: ["Anemo", 4, "Bow", 4],
@@ -487,20 +488,21 @@ function loadManualCharacterCosts() {
     Baizhu: ["Dendro", 5, "Catalyst", 4],
     Kirara: ["Dendro", 4, "Claymore", 4],
     Yaoyao: ["Dendro", 4, "Polearm", 4],
-    Kaveh: ["Dendro", 4, "Claymore", 2],
+    Kaveh: ["Dendro", 4, "Claymore", 0],
 
     Fischl: ["Electro", 4, "Bow", 8],
     Raiden: ["Electro", 5, "Polearm", 6],
     Clorinde: ["Electro", 5, "Sword", 6],
     Kuki: ["Electro", 4, "Sword", 6],
     Yae: ["Electro", 5, "Catalyst", 6],
+    Ororon: ["Electro", 4, "Bow", 6],
     Keqing: ["Electro", 5, "Sword", 4],
     Beidou: ["Electro", 4, "Claymore", 4],
     Cyno: ["Electro", 5, "Polearm", 4],
     Sara: ["Electro", 4, "Bow", 4],
     Lisa: ["Electro", 4, "Catalyst", 2],
     Sethos: ["Electro", 4, "Catalyst", 2],
-    Razor: ["Electro", 4, "Claymore", 2],
+    Razor: ["Electro", 4, "Claymore", 0],
     Dori: ["Electro", 4, "Claymore", 0],
     TravelerElectro: ["Electro", 5, "Sword", 0],
 
@@ -513,7 +515,7 @@ function loadManualCharacterCosts() {
     Gorou: ["Geo", 4, "Bow", 2],
     Yunjin: ["Geo", 4, "Polearm", 2],
     Kachina: ["Geo", 4, "Polearm", 2],
-    Ningguang: ["Geo", 4, "Catalyst", 0],
+    Ningguang: ["Geo", 4, "Catalyst", 2],
     Noelle: ["Geo", 4, "Claymore", 0],
     TravelerGeo: ["Geo", 5, "Sword", 0],
 
@@ -539,12 +541,12 @@ function loadManualCharacterCosts() {
     Chevreuse: ["Pyro", 4, "Polearm", 6],
     Diluc: ["Pyro", 5, "Claymore", 4],
     Gaming: ["Pyro", 4, "Claymore", 4],
+    Yoimiya: ["Pyro", 5, "Bow", 4],
     Yanfei: ["Pyro", 4, "Catalyst", 2],
     Klee: ["Pyro", 5, "Catalyst", 2],
     Thoma: ["Pyro", 4, "Polearm", 2],
-    Yoimiya: ["Pyro", 5, "Bow", 2],
     Dehya: ["Pyro", 5, "Claymore", 2],
-    Amber: ["Pyro", 4, "Bow", 0],
+    Amber: ["Pyro", 4, "Bow", 2],
     Xinyan: ["Pyro", 4, "Claymore", 0],
   };
 }
